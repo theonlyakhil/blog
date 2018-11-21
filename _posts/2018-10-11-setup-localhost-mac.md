@@ -6,10 +6,10 @@ categories:
   - MacOS
 last_modified_at: 2018-10-11T08:05:34-05:00
 header:
-  teaser: /assets/images/Blog/localhost-on-mac.jpg
+  teaser: /assets/images/blog/localhost-on-mac.jpg
 ---
 
-![WoLAN](/assets/images/Blog/localhost-on-mac.jpg)
+![WoLAN](/assets/images/blog/localhost-on-mac.jpg)
 
 I first started developing commerial products using HTML, CSS, Javascript and many more languages that were used to code client-side of a web application. I first encountered server-side languages while having a technical conversation with one of my seniors. This conversation motivated to learn PHP. While surfing the internet, I found we couldn't execute server-side languages like client-side. That is, I couldn't see the output just by executing the code via a browser. To execute server-side languages like PHP, I had to establish a server inside my mac.
 

@@ -6,10 +6,10 @@ categories:
   - Networking
 last_modified_at: 2018-09-27T08:05:34-05:00
 header:
-  teaser: /assets/images/Blog/setup-wake-on-lan.jpg
+  teaser: /assets/images/blog/setup-wake-on-lan.jpg
 ---
 
-![WoLAN](/assets/images/Blog/setup-wake-on-lan.jpg)
+![WoLAN](/assets/images/blog/setup-wake-on-lan.jpg)
 
 Why Wake on LAN? Wake on LAN is program to wake a system which is under deep sleep. That is, the system is shut down with power access. A system with an enabled Wake-on-LAN feature can be turned on using a special packet. This special packet is sent by the client remotely.
 
