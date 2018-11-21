@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-21T20:41:56+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name></author><entry><title type="html">Setup Localhost in MacOS</title><link href="http://localhost:4000/linux/macos/setup-localhost-mac/" rel="alternate" type="text/html" title="Setup Localhost in MacOS" /><published>2018-10-11T00:00:00+05:30</published><updated>2018-10-11T18:35:34+05:30</updated><id>http://localhost:4000/linux/macos/setup-localhost-mac</id><content type="html" xml:base="http://localhost:4000/linux/macos/setup-localhost-mac/">&lt;p&gt;&lt;img src=&quot;/assets/images/Blog/localhost-on-mac.jpg&quot; alt=&quot;WoLAN&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I first started developing commerial products using HTML, CSS, Javascript and many more languages that were used to code client-side of a web application. I first encountered server-side languages while having a technical conversation with one of my seniors. This conversation motivated to learn PHP. While surfing the internet, I found we couldn’t execute server-side languages like client-side. That is, I couldn’t see the output just by executing the code via a browser. To execute server-side languages like PHP, I had to establish a server inside my mac.&lt;/p&gt;
+
+&lt;p&gt;The following are the steps I used to setup a localhost on my mac.
+On mac, we dont have to install a server, it’s already pre-installed. We just have to enable it.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;$ sudo apachectl start&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To check whether the server is not running or not, go to http://localhost on the mac’s browser.
+PHP is also preinstalled on mac, we just have to enable it.
+First, we have to edit the server’s config file.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;$ sudo nano /etc/apache2/httpd.conf&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, we will search for PHP in this file using ctrl+w
+Remove # from the below line.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;LoadModule php7_module libexec/apache2/libphp7.so&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Restart apache server&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;$ sudo apachectl restart&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We have a create a folder named “Sites” on the home directory.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;$ sudo mkdir /Users/&amp;lt;--your_username--&amp;gt;/Sites&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lets save a file named index.php with the following contents.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;&amp;lt;?php echo &quot;Hello From Sites Folder!”; phpinfo();?&amp;gt;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We have to add the Sites fold on the config file. Edit the file using the following command.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;$ sudo nano /etc/apache2/httpd.conf&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Inside the file, search for the word “library” using ctrl+w.
+Replace /Library/WebServer/Documents with /Users/&amp;lt;–your_username–&amp;gt;/Sites
+Now, we need a database and a DBMS for the localhost. Lets download mysql for mac.
+First we will download MySQL from &lt;a href=&quot;https://dev.mysql.com/downloads/mysql/&quot;&gt;this link&lt;/a&gt;.
+Install MySQL from dmg file.
+Now, we will configure MqSQL by opening MySQL from system preferences. Add a password and click legacy password. After this step, just click “start MySQL server”.
+You can use sql through bash by executing the following command.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;$ /usr/local/mysql/bin/mysql -u root -p&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Or you can use Sequel pro. Sequel pro is an application that can be used to any database remotely. That is, it can be used to connect to localhost and anyother server established on the network.
+Now, we will make the server communication encrypted. That is, we will enable SSL/HTTPS on localhost. Execute the following command to edit the config file.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;$ sudo nano /etc/apache2/httpd.conf&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Search for socache_shmcb_module using ctrl+w.
+Remove # from the following lines.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;socache_shmcb_module libexec/apache2/mod_socache_shmcb.so&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;serach for LoadModule ssl_module libexec/apache2/mod_ssl.so and remove # from it.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;LoadModule ssl_module libexec/apache2/mod_ssl.so&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Delete # from Include /private/etc/apache2/extra/httpd-ssl.conf&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;/private/etc/apache2/extra/httpd-ssl.conf&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We have to replace www.example.com:443 with localhost from the below file.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;$ sudo nano /etc/apache2/extra/httpd-ssl.conf&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Replace Library/WebServer/Documents. Replace that with /Users/&amp;lt;–your_username–&amp;gt;/Sites
+Add the following lines below &lt;VirtualHost_default_:443&gt;&lt;/VirtualHost_default_:443&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;&amp;lt;Directory &quot;/Users/&amp;lt;--your_username--&amp;gt;/Sites&quot;&amp;gt;&lt;/span&gt; 
+    &lt;span class=&quot;s&quot;&gt;Options All&lt;/span&gt; 
+    &lt;span class=&quot;s&quot;&gt;MultiviewsMatch Any&lt;/span&gt; 
+    &lt;span class=&quot;s&quot;&gt;AllowOverride All&lt;/span&gt; 
+    &lt;span class=&quot;s&quot;&gt;Require all granted&lt;/span&gt; 
+   &lt;span class=&quot;s&quot;&gt;&amp;lt;/Directory&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Open the following config file.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;$ sudo nano /etc/ssl/openssl.cnf&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add the following lines at the end.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;san&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; 
+   &lt;span class=&quot;s&quot;&gt;subjectAltName                  = DNS:localhost&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we generate a key using openSSL.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;$ sudo openssl req -extensions san -config /etc/ssl/openssl.cnf -x509 -nodes -newkey rsa:4096 -keyout /private/etc/apache2/server.key -out /private/etc/apache2/server.crt -days 365 -subj &quot;/C=your_country/ST=your_state/L=your_city/O=hostname/CN=localhost&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we will add the certificate using the following command.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;$ sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain /private/etc/apache2/server.crt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now just restart the apache server.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;$ sudo apachectl restart&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We have not successfully established a server inside Mac.&lt;/p&gt;</content><author><name>Sashwat K</name></author><summary type="html"></summary></entry><entry><title type="html">Setup wake on LAN on local server</title><link href="http://localhost:4000/linux/networking/wake-on-lan-on-local-server/" rel="alternate" type="text/html" title="Setup wake on LAN on local server" /><published>2018-10-04T00:00:00+05:30</published><updated>2018-09-27T18:35:34+05:30</updated><id>http://localhost:4000/linux/networking/wake-on-lan-on-local-server</id><content type="html" xml:base="http://localhost:4000/linux/networking/wake-on-lan-on-local-server/">&lt;p&gt;&lt;img src=&quot;/assets/images/Blog/setup-wake-on-lan.jpg&quot; alt=&quot;WoLAN&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Why Wake on LAN? Wake on LAN is program to wake a system which is under deep sleep. That is, the system is shut down with power access. A system with an enabled Wake-on-LAN feature can be turned on using a special packet. This special packet is sent by the client remotely.&lt;/p&gt;
+
+&lt;p&gt;To implement Wake-On-LAN on the server, we need to install ethtool on our server and wakeonlan commanline program on our personal system.&lt;/p&gt;
+
+&lt;p&gt;First we will setup our server:-&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enable wake-on-LAN on BIOS settings. Enter into BIOS and search for wake on LAN and enable it.
+Make sure the ethernet cable connect from the server to the switch or router has all the 8 pins connected. This is because the magic packet is sent via a dedicatd pin, usually last 2 pins.
+Install ethtool into the server.&lt;/p&gt;
+
+    &lt;p&gt;(Ubuntu / Debian)&lt;/p&gt;
+
+    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ sudo apt install ethtool&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;(Fedora)&lt;/p&gt;
+
+    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ sudo dnf install ethtool&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;(RHEL / CentOS)&lt;/p&gt;
+
+    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;s&quot;&gt;$ sudo yum install ethtool&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Now let’s find the name of ethernet port present in the system. This command will also reveal the mac address.&lt;/p&gt;
+
+    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ ip a&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;The above command will output the ethernet port name (Lets consider the ethernet name to be enp9s0).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Let’s check if ethtool detects the port.&lt;/p&gt;
+
+    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ sudo ethtool enp9s0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Now, let’s activate wake on lan.&lt;/p&gt;
+
+    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ sudo ethtool -s enp8s0 wol g&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Now, we will setup wake on client on your system. i.e, the system that will be used to wake the server.&lt;/p&gt;
+
+    &lt;p&gt;(Ubuntu / Debian)&lt;/p&gt;
+
+    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ sudo apt install etherwake&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;(Mac)&lt;/p&gt;
+
+    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ brew install wakeonlan&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;(Fedora / RHEL / CentOS)&lt;/p&gt;
+
+    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ wget http://gsd.di.uminho.pt/jpo/software/wakeonlan/downloads/wakeonlan-0.41-0.fdr.1.noarch.rpm&lt;/span&gt; 
+&lt;span class=&quot;s&quot;&gt;$ rpm -Uvh wakeonlan-0.41-0.fdr.1.noarch.rpm&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now, we can wake the system using the wakeonlan command.
+Execute the following command.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;s&quot;&gt;$ wakeonlan mac-address&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The above command will wake your system.&lt;/p&gt;</content><author><name>Sashwat K</name></author><summary type="html"></summary></entry><entry><title type="html">Things to do after installing Fedora 28</title><link href="http://localhost:4000/linux/fedora/things-to-do-after-installing-fedora-28/" rel="alternate" type="text/html" title="Things to do after installing Fedora 28" /><published>2018-09-27T00:00:00+05:30</published><updated>2018-09-27T18:35:34+05:30</updated><id>http://localhost:4000/linux/fedora/things-to-do-after-installing-fedora-28</id><content type="html" xml:base="http://localhost:4000/linux/fedora/things-to-do-after-installing-fedora-28/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/things-to-do-after-installing-fedora-28.jpeg&quot; alt=&quot;Fedora 28&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fedora has been my favourite from the day I started using Fedora. As Fedora was sponsored by Red Hat, I had to make sure I gave it a try. I started my linux life using Ubuntu. Switching from Ubuntu to Fedora was not a easy task. I found first few days of using Fedora a bit hard. So, after gaining some experience using Fedora, gave me an idea to write a blog about the initial steps to be performed by a newbie Fedora user or a user who has just installed Fedora. When I was planning to write the blog, came the release of Fedora 28.&lt;/p&gt;
+
+&lt;p&gt;These are the steps I followed after installing Fedora 28.&lt;/p&gt;
+
+&lt;p&gt;First, we will switch to superuser.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ sudo su&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;There are few rpm packages to download. So,&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ cd Downloads&lt;/span&gt; 
+&lt;span class=&quot;s&quot;&gt;$ mkdir post-fedora-install&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now, lets update the OS. If you are new to Fedora, the fedora’s update function will automatically update the repo list and will install the latest packages to the system.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y update&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lets start the SSH server. SSH will help to connect to your system remotely from another system in the same network.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ systemctl start sshd&lt;/span&gt; 
+&lt;span class=&quot;s&quot;&gt;$ systemctl enable sshd&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lets install RPM fusion repository into the system. The fusion repository will help to install all free and non free 3rd party applications.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ rpm -ivh https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-28.noarch.rpm&lt;/span&gt; 
+&lt;span class=&quot;s&quot;&gt;$ rpm -ivh https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm&lt;/span&gt; 
+&lt;span class=&quot;s&quot;&gt;$ dnf -y update&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you are using GNOME, installing the GNOME tweak tool will help you customize the desktop environment.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y install gnome-tweak-tool&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lets install some media codecs to view all media files.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y install gstreamer-plugins-base gstreamer1-plugins-base gstreamer-plugins-bad gstreamer-plugins-ugly gstreamer1-plugins-ugly gstreamer-plugins-good-extras gstreamer1-plugins-good-extras gstreamer1-plugins-bad-freeworld ffmpeg gstreamer-ffmpeg&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lets install VLC.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y install vlc&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lets install Stacer. Stacer is an application to view system information and monitor all the system resources. As stacer is an open-source application, we must first download it from github.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ wget https://github.com/oguzhaninan/Stacer/releases/download/v1.0.8/stacer-1.0.8_x64.rpm&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now lets install the downloaded rpm file.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y install stacer-1.0.8_x64.rpm&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now lets install the downloaded rpm file.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y install stacer-1.0.8_x64.rpm&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lets install a torrent client. qbittorrent works just fine for Fedora 28.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y install qbittorrent&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you like to download videos from youtube. Then worry not, here comes youtube-dl. The youtube-dl is a commandline function to download youtube videos.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y install youtube-dl&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Consider Fedora is your daily driver workstation. You might need to take screenshots or custom screenshots. Shutter snipping tools is the best alternative for Fedora.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y install shutter&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lets install unzip for uncompressing files.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y install unzip&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lets install java plugins for web browsers.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y install icedtea-web java-openjdk&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lets install java JDK.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ yum install -y java-1.8.0-openjdk-devel&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you develop programs in C, you will need development tools.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y group install 'Development Tools'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Everyone has an IDE preference, I like to use Sublime. First we must import the sublime repo.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We then add the repo using config manager.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, we are ready to install Sublime IDE.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y install sublime-text&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you are a gamer, you must have steam. For installing steam, we need to add the steam repo into the system.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y config-manager --add-repo=http://negativo17.org/repos/fedora-steam.repo&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, lets install the update the repo list.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y update&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lets install Steam.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y install steam&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This is it folks. These steps helped me make my Fedora be used as a daily driver.&lt;/p&gt;</content><author><name>Sashwat K</name></author><summary type="html"></summary></entry></feed>

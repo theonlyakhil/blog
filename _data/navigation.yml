@@ -1,0 +1,14 @@
+# main links
+main:
+  - title: "Profile"
+    url: https://sashuu6.github.io
+  - title: "Donate"
+    url: https://sashuu6.github.io/about
+  # - title: "About"
+  #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
