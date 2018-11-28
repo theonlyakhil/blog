@@ -1,4 +1,87 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.sashwat.in/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.sashwat.in/" rel="alternate" type="text/html" /><updated>2018-11-25T11:23:37+05:30</updated><id>https://www.sashwat.in/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name></author><entry><title type="html">Setup Localhost in MacOS</title><link href="https://www.sashwat.in/linux/macos/setup-localhost-mac/" rel="alternate" type="text/html" title="Setup Localhost in MacOS" /><published>2018-10-11T00:00:00+05:30</published><updated>2018-10-11T18:35:34+05:30</updated><id>https://www.sashwat.in/linux/macos/setup-localhost-mac</id><content type="html" xml:base="https://www.sashwat.in/linux/macos/setup-localhost-mac/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/localhost-on-mac.jpg&quot; alt=&quot;WoLAN&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.sashwat.in/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.sashwat.in/" rel="alternate" type="text/html" /><updated>2018-11-29T00:02:35+05:30</updated><id>https://www.sashwat.in/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name></author><entry><title type="html">My Take On DevOps</title><link href="https://www.sashwat.in/devops/my-take-on-devops/" rel="alternate" type="text/html" title="My Take On DevOps" /><published>2018-10-17T00:00:00+05:30</published><updated>2018-10-17T18:35:34+05:30</updated><id>https://www.sashwat.in/devops/my-take-on-devops</id><content type="html" xml:base="https://www.sashwat.in/devops/my-take-on-devops/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/my-take-on-devops/devops-cover.png&quot; alt=&quot;DevOps&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-devops&quot;&gt;What is DevOps?&lt;/h2&gt;
+
+&lt;p&gt;I heard this term first when I was doing my internship at Appfabs. They focused on DevSecOps as they were a Security based company. So, to understand DevSecOps, I had to know what is DevOps. The first thing I was told that DevOps is a methodology, not a technology. DevOps is a methodology used in SDLC (Software Development Life Cycle) where the development team and operations team work together from designing stage to production support. To understand DevOps and why DevOps was introduced, we need to know the methods used before DevOps was introduced.&lt;/p&gt;
+
+&lt;p&gt;All these started when the waterfall model was introduced into SDLC. This model was best suited when:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;The product requirements are clear and fixed.&lt;/li&gt;
+  &lt;li&gt;The product definition is stable. That is, the product’s client has a clear cut idea on how the product must be.&lt;/li&gt;
+  &lt;li&gt;The project has very least risk during development.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The main disadvantages using this method was:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;It was slow.&lt;/li&gt;
+  &lt;li&gt;Change implement was slow.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;As in software field, slow means loss. Using this method in huge and sensitive projects gave companies huge losses.
+Keeping the disadvantages in mind, a new model was introduced that could fix all the disadvantages of the waterfall model. Thus, came the Agile methodology.
+Agile methodology brought continuous iteration in product development and testing throughout the SDLC.&lt;/p&gt;
+
+&lt;p&gt;The Agile methodology is bested when:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;The product requirements frequently change.&lt;/li&gt;
+  &lt;li&gt;The product requires faster development.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And guess what? even this method didn’t work out for many companies, due to:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Lack of agility in the operations phase of the product lifecycle.&lt;/li&gt;
+  &lt;li&gt;The issue in the code environment. That is, the code works perfectly fine in developer’s PC, but won’t work on the production environment (Server).&lt;/li&gt;
+  &lt;li&gt;The deployment of the product is linear.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To solve the disadvantages in agile methodology, the DevOps was introduced. The DevOps was best suited when:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;The product’s requirement changed frequently.&lt;/li&gt;
+  &lt;li&gt;When the Operations team needs to become agile.&lt;/li&gt;
+  &lt;li&gt;For bridging the gap between the development team and the operations team.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To understand DevOps better, we will learn a case study of a big shot company like Facebook who finally used DevOps due to their product’s need. In 2011, Facebook introduced a major update that includes many cool features like timeline support, music support and many more. The public was notified about this new release. As Facebook as a huge hit during that time, all the active Facebook users (almost 500 million) started using Facebook to use these features. As Facebook’s servers during that time were not prepared to handle this huge traffic, it got shut down causing a server meltdown. Added to this major issue, the new features got a mixed opinion among the users. That is, many users loved it, other users absolutely hated it and few requested for modification. These kinds of reaction created a chaotic situation in Facebook headquarters. To solve this issue, they brought in DevOps and introduced a technique called “Dark Launching”. The “Dark Launching” is a type of product release technique in which:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;New features will be first released to a smaller group of users (mainly internal BETA testers). There will be constant communication between the team and the BETA testers. The communication involves taking feedback and other techniques that help to improve the features to the user’s need.&lt;/li&gt;
+  &lt;li&gt;When the team gets an assurance that the features can be released to the public, they release it to public BETA and then to the public through multiple product releases.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/my-take-on-devops/devops-fb-example.png&quot; alt=&quot;Facebook dark launching&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Facebook achieves “Dark Launching” via the use of the delivery pipeline. A delivery pipeline is a set of steps that a code goes through till it reached production. A pipeline contains an automated building, testing and deploying tools that work together till the product’s release.&lt;/p&gt;
+
+&lt;p&gt;So after learning a case, we can say that “DevOps is a software development approach that involves continuous development, testing, integration, deployment and monitoring throughout the development cycle.”&lt;/p&gt;
+
+&lt;h2 id=&quot;devops-lifecycles&quot;&gt;DevOps Lifecycles&lt;/h2&gt;
+
+&lt;p&gt;The lifecycle represents the stages in DevOps:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Continuous Development: The continuous development involves the product’s development is split into smaller development cycles.&lt;/li&gt;
+  &lt;li&gt;Continuous Testing: This cycle involves the Quality Assurance team identifying any bugs or errors in the code after every development cycle.&lt;/li&gt;
+  &lt;li&gt;Continuous Integration: This cycle involves integrating the new code with the existing code present in the production environment.&lt;/li&gt;
+  &lt;li&gt;Continuous Deployment: This cycle involves the deployment of code into the environment. The deployment is done in such a way that, it doesn’t affect the product’s current network traffic.&lt;/li&gt;
+  &lt;li&gt;Continuous Monitoring: The monitoring helps the team to monitor changes in the application after every lifecycle.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;devops-tools&quot;&gt;DevOps Tools&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/my-take-on-devops/devops-tools.png&quot; alt=&quot;DevOps tools from edureka&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The main advantage that DevOps gave us is “Automation”. The developer can automate the whole operations process in the software lifecycle. Automation in DevOps is achieved using tools at different stages of its cycle.
+The following tools (that I have used) are used at different stages:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Plan - Jira&lt;/li&gt;
+  &lt;li&gt;Code - Git&lt;/li&gt;
+  &lt;li&gt;Build - Gradle, Maven&lt;/li&gt;
+  &lt;li&gt;Test - Selenium, JUnit&lt;/li&gt;
+  &lt;li&gt;Integrate - Jenkins&lt;/li&gt;
+  &lt;li&gt;Deploy - Docker&lt;/li&gt;
+  &lt;li&gt;Operate - Ansible&lt;/li&gt;
+  &lt;li&gt;Monitor - Nagios, slack&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Let’s consider an example of a company that has implemented DevOps methodology in their product and have used few tools for automation. The tool Jenkins (integration tool) detects changes in code and automatically triggers a build using tools like Gradle or Maven. After the build, Jenkins will deploy the code for testing. The testing is done by test tools like Selenium (if web app), JUnit (For Java apps) or any other testing tool. The deployment is handled using Docker. The running code is then monitored by tools like Nagios, Splunk or ELK Slack.&lt;/p&gt;</content><author><name>Sashwat K</name></author><summary type="html"></summary></entry><entry><title type="html">Setup Localhost in MacOS</title><link href="https://www.sashwat.in/linux/macos/setup-localhost-mac/" rel="alternate" type="text/html" title="Setup Localhost in MacOS" /><published>2018-10-11T00:00:00+05:30</published><updated>2018-10-11T18:35:34+05:30</updated><id>https://www.sashwat.in/linux/macos/setup-localhost-mac</id><content type="html" xml:base="https://www.sashwat.in/linux/macos/setup-localhost-mac/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/localhost-on-mac.jpg&quot; alt=&quot;WoLAN&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I first started developing commerial products using HTML, CSS, Javascript and many more languages that were used to code client-side of a web application. I first encountered server-side languages while having a technical conversation with one of my seniors. This conversation motivated to learn PHP. While surfing the internet, I found we couldn’t execute server-side languages like client-side. That is, I couldn’t see the output just by executing the code via a browser. To execute server-side languages like PHP, I had to establish a server inside my mac.&lt;/p&gt;
 
