@@ -18,26 +18,26 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Sashwat's Blog">
 <meta property="og:title" content="Things to do after installing Fedora 28">
-<meta property="og:url" content="https://www.sashwat.in/linux/fedora/things-to-do-after-installing-fedora-28/">
+<meta property="og:url" content="https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7/">
 
 
   <meta property="og:description" content="">
 
 
 
-  <meta property="og:image" content="https://www.sashwat.in/assets/images/blog/things-to-do-after-installing-fedora-28.jpeg">
+  <meta property="og:image" content="https://www.sashwat.in/assets/images/blog/things-to-do-after-installing-rhel-7.png">
 
 
 
   <meta name="twitter:site" content="@blackisashu">
   <meta name="twitter:title" content="Things to do after installing Fedora 28">
   <meta name="twitter:description" content="">
-  <meta name="twitter:url" content="https://www.sashwat.in/linux/fedora/things-to-do-after-installing-fedora-28/">
+  <meta name="twitter:url" content="https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7/">
 
   
     <meta name="twitter:card" content="summary">
     
-      <meta name="twitter:image" content="https://www.sashwat.in/assets/images/blog/things-to-do-after-installing-fedora-28.jpeg">
+      <meta name="twitter:image" content="https://www.sashwat.in/assets/images/blog/things-to-do-after-installing-rhel-7.png">
     
   
 
@@ -45,11 +45,11 @@
 
 
 
-  <meta property="article:published_time" content="2018-09-27T00:00:00+05:30">
+  <meta property="article:published_time" content="2018-10-24T00:00:00+05:30">
 
 
 
-  <meta property="article:modified_time" content="2018-09-27T18:35:34+05:30">
+  <meta property="article:modified_time" content="2018-10-24T18:35:34+05:30">
 
 
 
@@ -58,7 +58,7 @@
   
 
 
-<link rel="canonical" href="https://www.sashwat.in/linux/fedora/things-to-do-after-installing-fedora-28/">
+<link rel="canonical" href="https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7/">
 
 
 
@@ -301,8 +301,8 @@
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
     <meta itemprop="headline" content="Things to do after installing Fedora 28">
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="September 27, 2018">
-    <meta itemprop="dateModified" content="September 27, 2018">
+    <meta itemprop="datePublished" content="October 24, 2018">
+    <meta itemprop="dateModified" content="October 24, 2018">
 
     <div class="page__inner-wrap">
       
@@ -315,7 +315,7 @@
 
 
 
-  2 minute read
+  3 minute read
 </p>
           
         </header>
@@ -323,136 +323,180 @@
 
       <section class="page__content" itemprop="text">
         
-        <p><img src="/assets/images/blog/things-to-do-after-installing-fedora-28.jpeg" alt="Fedora 28" /></p>
+        <p><img src="/assets/images/blog/things-to-do-after-installing-rhel-7.png" alt="RHEL7" /></p>
 
-<p>Fedora has been my favourite from the day I started using Fedora. As Fedora was sponsored by Red Hat, I had to make sure I gave it a try. I started my linux life using Ubuntu. Switching from Ubuntu to Fedora was not a easy task. I found first few days of using Fedora a bit hard. So, after gaining some experience using Fedora, gave me an idea to write a blog about the initial steps to be performed by a newbie Fedora user or a user who has just installed Fedora. When I was planning to write the blog, came the release of Fedora 28.</p>
+<p>The RHEL is RedHat Enterprise Linux,  a server distribution of Linux. RHEL is not like other Linux distribution because you have to pay money for the company’s services. But, the Operating System is free to use. The latest version of RHEL is RHEL 7.
+The following things where the first things I did, after install RHEL 7 on my virtual machine.
+First, we have to do is enable RedHat subscription. I subscribed for a developer account through the RedHat website and developer subscription is free. Our machine should be registered for doing anything. This registration can be done using a package called subscription manager. Follow the steps to register your machine.</p>
 
-<p>These are the steps I followed after installing Fedora 28.</p>
-
-<p>First, we will switch to superuser.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ sudo su</span>
-</code></pre></div></div>
-<p>There are few rpm packages to download. So,</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ cd Downloads</span> 
-<span class="s">$ mkdir post-fedora-install</span>
-</code></pre></div></div>
-<p>Now, lets update the OS. If you are new to Fedora, the fedora’s update function will automatically update the repo list and will install the latest packages to the system.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y update</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ subscription-manager register --username your_username --password your_password --auto-attach</span>
+<span class="s">$ subscription-manager list --available</span>
+<span class="s">$ subscription-manager list</span>
+<span class="s">$ subscription-manager service-level --list</span>
+<span class="s">$ subscription-manager service-level --set=self-support</span>
 </code></pre></div></div>
 
-<p>Lets start the SSH server. SSH will help to connect to your system remotely from another system in the same network.</p>
+<p>Now, we need to enable yum repositories to install any applications via the repo list. The following steps will enable yum repositories.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ systemctl start sshd</span> 
-<span class="s">$ systemctl enable sshd</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ subscription-manager repos --list</span>
+<span class="s">$ yum repolist all</span>
+<span class="s">$ yum repolist</span>
+<span class="s">$ vi /etc/yum.repos.d/redhat.repo</span>
+</code></pre></div></div>
+<p>Uncomment all the repositories you need for your system.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum repolist all</span>
+</code></pre></div></div>
+<p>Let’s update your RHEL 7 system.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum update</span>
 </code></pre></div></div>
 
-<p>Lets install RPM fusion repository into the system. The fusion repository will help to install all free and non free 3rd party applications.</p>
+<p>Now, we need to change the system’s hostname. If you have done it during your RHEL 7 installation, then this step is not necessary.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ rpm -ivh https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-28.noarch.rpm</span> 
-<span class="s">$ rpm -ivh https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm</span> 
-<span class="s">$ dnf -y update</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ echo hostname</span>
+<span class="s">$ nano /etc/hostname</span>
 </code></pre></div></div>
 
-<p>If you are using GNOME, installing the GNOME tweak tool will help you customize the desktop environment.</p>
+<p>Change the name to any name and save it. Just reboot the system to see the changes in your hostname.
+We will now install an interesting application, this application can be used to view websites via the terminal. The view won’t be appealing but can be used for basic needs. To install links, type the following command.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install gnome-tweak-tool</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum install links</span>
 </code></pre></div></div>
 
-<p>Lets install some media codecs to view all media files.</p>
+<p>Now we will set up a local server in your system. To do that, we will have to install Apache server, PHP and MySQL. I am using PHP 5.6 because many of the functions that I used got deprecated after PHP 5.6 like mcrypt and many more. 
+Let’s install the Apache server.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install gstreamer-plugins-base gstreamer1-plugins-base gstreamer-plugins-bad gstreamer-plugins-ugly gstreamer1-plugins-ugly gstreamer-plugins-good-extras gstreamer1-plugins-good-extras gstreamer1-plugins-bad-freeworld ffmpeg gstreamer-ffmpeg</span>
-
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum install httpd</span>
 </code></pre></div></div>
 
-<p>Lets install VLC.</p>
+<p>Now, we have to open port in the firewall for the HTTPD in the server.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install vlc</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ firewall-cmd --add-service=http</span>
+<span class="s">$ firewall-cmd --permanent --add-port=80/tcp</span>
+<span class="s">$ firewall-cmd --reload</span>
 </code></pre></div></div>
 
-<p>Lets install Stacer. Stacer is an application to view system information and monitor all the system resources. As stacer is an open-source application, we must first download it from github.</p>
+<p>Now, we will restart and enable HTTPD service.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ wget https://github.com/oguzhaninan/Stacer/releases/download/v1.0.8/stacer-1.0.8_x64.rpm</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ systemctl restart httpd.service</span>
+<span class="s">$ systemctl start httpd.service</span>
+<span class="s">$ systemctl enable httpd.service</span>
 </code></pre></div></div>
 
-<p>Now lets install the downloaded rpm file.</p>
+<p>Now let’s check if the server is up.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install stacer-1.0.8_x64.rpm</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ links &lt;your_ip_address&gt;</span>
 </code></pre></div></div>
 
-<p>Now lets install the downloaded rpm file.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install stacer-1.0.8_x64.rpm</span>
+<p>If you see apache server page, then your server is up and running.
+Now, we will enable indexing in the server.</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ nano /etc/httpd/conf.d/welcome.conf</span>
 </code></pre></div></div>
 
-<p>Lets install a torrent client. qbittorrent works just fine for Fedora 28.</p>
+<p>In the file, search for set -indexes and change it to set +indexes. If it is commented, then uncomment it by removing # from it.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install qbittorrent</span>
+<p>Now we will restart apache to apply the changes.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ systemctl restart httpd</span>
 </code></pre></div></div>
 
-<p>If you like to download videos from youtube. Then worry not, here comes youtube-dl. The youtube-dl is a commandline function to download youtube videos.</p>
+<p>Now we will install PHP 5.6.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install youtube-dl</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum search php</span>
+<span class="s">$ rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</span>
+<span class="s">$ rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm</span>
+<span class="s">$ yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring</span>
 </code></pre></div></div>
 
-<p>Consider Fedora is your daily driver workstation. You might need to take screenshots or custom screenshots. Shutter snipping tools is the best alternative for Fedora.</p>
+<p>We will check, if PHP is working on our system or not.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install shutter</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ echo -e "&lt;?php\nphpinfo();\n?&gt;" &gt;&gt; /var/www/html/phpinfo.php</span>
 </code></pre></div></div>
 
-<p>Lets install unzip for uncompressing files.</p>
+<p>To check if the php file is working, just type:-</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install unzip</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ links http://&lt;ip_address&gt;/phpinfo.php</span>
 </code></pre></div></div>
 
-<p>Lets install java plugins for web browsers.</p>
+<p>Now, we will install mariaDB.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install icedtea-web java-openjdk</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum install mariadb-server mariadb</span>
 </code></pre></div></div>
 
-<p>Lets install java JDK.</p>
+<p>Now, we will start mariaDB service.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum install -y java-1.8.0-openjdk-devel</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ systemctl start mariadb.service</span>
+<span class="s">$ systemctl enable mariadb.service</span>
 </code></pre></div></div>
 
-<p>If you develop programs in C, you will need development tools.</p>
+<p>To access the database via the terminal (I dont prefer phpmyadmin).</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y group install 'Development Tools'</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ mysql -u root -p</span>
 </code></pre></div></div>
 
-<p>Everyone has an IDE preference, I like to use Sublime. First we must import the sublime repo.</p>
+<p>Now, lets install gcc (C++ compiler) in the system.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum install gcc</span>
+</code></pre></div></div>
+<p>Now, let’s install java.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum install java</span>
 </code></pre></div></div>
 
-<p>We then add the repo using config manager.</p>
+<p>Now, we will install Apache Tomcat.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum install tomcat</span>
 </code></pre></div></div>
 
-<p>Now, we are ready to install Sublime IDE.</p>
+<p>Now, let’s start tomcat.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install sublime-text</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ systemctl start tomcat</span>
+<span class="s">$ systemctl enable tomcat.service</span>
 </code></pre></div></div>
 
-<p>If you are a gamer, you must have steam. For installing steam, we need to add the steam repo into the system.</p>
+<p>We have to open a port on our firewall. To do that:-</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y config-manager --add-repo=http://negativo17.org/repos/fedora-steam.repo</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ firewall-cmd --zone=public --add-port=8080/tcp --permanent</span>
+<span class="s">$ firewall-cmd --reload</span>
 </code></pre></div></div>
 
-<p>Now, lets install the update the repo list.</p>
+<p>Now, let’s install nmap. The nmap is an open-source security scanner.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y update</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum install nmap</span>
 </code></pre></div></div>
 
-<p>Lets install Steam.</p>
+<p>To download files from the internet, we use wget. We will now install wget.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install steam</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum install wget</span>
 </code></pre></div></div>
 
-<p>This is it folks. These steps helped me make my Fedora be used as a daily driver.</p>
+<p>To unzip files, we need unzip. To install unzip, do the following:-</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum install unzip</span>
+</code></pre></div></div>
+
+<p>Now, we will install an exploit and backdoor scanner called rootkit hunter.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum install rkhunter</span>
+</code></pre></div></div>
+
+<p>To start the scanner, just type.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ rkhunter --check</span>
+</code></pre></div></div>
+
+<p>When you have a server, you need to have a web panel. We will install a Webmin for satisfying that purpose.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ wget http://prdownloads.sourceforge.net/webadmin/webmin-1.740-1.noarch.rpm</span>
+<span class="s">$ rpm -ivh webmin-1.740-1.noarch.rpm</span>
+</code></pre></div></div>
+
+<p>Now, we have to open the port for accessing it remotely via a web browser.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ firewall-cmd --zone=public --add-port=10000/tcp --permanent</span>
+<span class="s">$ firewall-cmd --reload</span>
+</code></pre></div></div>
 
         
       </section>
@@ -475,18 +519,18 @@
     
       
       
-      <a href="/categories/#fedora" class="page__taxonomy-item" rel="tag">Fedora</a><span class="sep">, </span>
+      <a href="/categories/#linux" class="page__taxonomy-item" rel="tag">Linux</a><span class="sep">, </span>
     
       
       
-      <a href="/categories/#linux" class="page__taxonomy-item" rel="tag">Linux</a>
+      <a href="/categories/#rhel" class="page__taxonomy-item" rel="tag">RHEL</a>
     
     </span>
   </p>
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-09-27">September 27, 2018</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-10-24">October 24, 2018</time></p>
         
       </footer>
 
@@ -495,24 +539,24 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?via=blackisashu&text=Things+to+do+after+installing+Fedora+28%20https%3A%2F%2Fwww.sashwat.in%2Flinux%2Ffedora%2Fthings-to-do-after-installing-fedora-28%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?via=blackisashu&text=Things+to+do+after+installing+Fedora+28%20https%3A%2F%2Fwww.sashwat.in%2Flinux%2Frhel%2Fthings-to-do-after-installing-rhel-7%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.sashwat.in%2Flinux%2Ffedora%2Fthings-to-do-after-installing-fedora-28%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.sashwat.in%2Flinux%2Frhel%2Fthings-to-do-after-installing-rhel-7%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.sashwat.in%2Flinux%2Ffedora%2Fthings-to-do-after-installing-fedora-28%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.sashwat.in%2Flinux%2Frhel%2Fthings-to-do-after-installing-rhel-7%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.sashwat.in%2Flinux%2Ffedora%2Fthings-to-do-after-installing-fedora-28%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.sashwat.in%2Flinux%2Frhel%2Fthings-to-do-after-installing-rhel-7%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">Previous</a>
+      <a href="/devops/my-take-on-devops/" class="pagination--pager" title="My Take On DevOps
+">Previous</a>
     
     
-      <a href="/linux/networking/wake-on-lan-on-local-server/" class="pagination--pager" title="Setup wake on LAN on local server
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -526,42 +570,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src=
-          
-            "/assets/images/blog/things-to-do-after-installing-rhel-7.png"
-          
-          alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/linux/rhel/things-to-do-after-installing-rhel-7/" rel="permalink">Things to do after installing Fedora 28
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  4 minute read
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">
-
-</p>
-  </article>
-</div>
         
           
 
@@ -671,6 +679,42 @@
   </article>
 </div>
         
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/blog/things-to-do-after-installing-fedora-28.jpeg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/linux/fedora/things-to-do-after-installing-fedora-28/" rel="permalink">Things to do after installing Fedora 28
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+        
       </div>
     </div>
   
@@ -750,8 +794,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://www.sashwat.in/linux/fedora/things-to-do-after-installing-fedora-28/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/linux/fedora/things-to-do-after-installing-fedora-28"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/linux/rhel/things-to-do-after-installing-rhel-7"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');

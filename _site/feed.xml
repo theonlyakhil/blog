@@ -1,4 +1,177 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.sashwat.in/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.sashwat.in/" rel="alternate" type="text/html" /><updated>2018-11-29T00:02:35+05:30</updated><id>https://www.sashwat.in/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name></author><entry><title type="html">My Take On DevOps</title><link href="https://www.sashwat.in/devops/my-take-on-devops/" rel="alternate" type="text/html" title="My Take On DevOps" /><published>2018-10-17T00:00:00+05:30</published><updated>2018-10-17T18:35:34+05:30</updated><id>https://www.sashwat.in/devops/my-take-on-devops</id><content type="html" xml:base="https://www.sashwat.in/devops/my-take-on-devops/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/my-take-on-devops/devops-cover.png&quot; alt=&quot;DevOps&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.sashwat.in/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.sashwat.in/" rel="alternate" type="text/html" /><updated>2018-11-30T07:50:29+05:30</updated><id>https://www.sashwat.in/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name></author><entry><title type="html">Things to do after installing Fedora 28</title><link href="https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7/" rel="alternate" type="text/html" title="Things to do after installing Fedora 28" /><published>2018-10-24T00:00:00+05:30</published><updated>2018-10-24T18:35:34+05:30</updated><id>https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7</id><content type="html" xml:base="https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/things-to-do-after-installing-rhel-7.png&quot; alt=&quot;RHEL7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The RHEL is RedHat Enterprise Linux,  a server distribution of Linux. RHEL is not like other Linux distribution because you have to pay money for the company’s services. But, the Operating System is free to use. The latest version of RHEL is RHEL 7.
+The following things where the first things I did, after install RHEL 7 on my virtual machine.
+First, we have to do is enable RedHat subscription. I subscribed for a developer account through the RedHat website and developer subscription is free. Our machine should be registered for doing anything. This registration can be done using a package called subscription manager. Follow the steps to register your machine.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ subscription-manager register --username your_username --password your_password --auto-attach&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ subscription-manager list --available&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ subscription-manager list&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ subscription-manager service-level --list&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ subscription-manager service-level --set=self-support&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, we need to enable yum repositories to install any applications via the repo list. The following steps will enable yum repositories.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ subscription-manager repos --list&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ yum repolist all&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ yum repolist&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ vi /etc/yum.repos.d/redhat.repo&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Uncomment all the repositories you need for your system.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ yum repolist all&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Let’s update your RHEL 7 system.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ yum update&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, we need to change the system’s hostname. If you have done it during your RHEL 7 installation, then this step is not necessary.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ echo hostname&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ nano /etc/hostname&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Change the name to any name and save it. Just reboot the system to see the changes in your hostname.
+We will now install an interesting application, this application can be used to view websites via the terminal. The view won’t be appealing but can be used for basic needs. To install links, type the following command.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ yum install links&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we will set up a local server in your system. To do that, we will have to install Apache server, PHP and MySQL. I am using PHP 5.6 because many of the functions that I used got deprecated after PHP 5.6 like mcrypt and many more. 
+Let’s install the Apache server.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ yum install httpd&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, we have to open port in the firewall for the HTTPD in the server.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ firewall-cmd --add-service=http&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ firewall-cmd --permanent --add-port=80/tcp&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ firewall-cmd --reload&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, we will restart and enable HTTPD service.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ systemctl restart httpd.service&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ systemctl start httpd.service&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ systemctl enable httpd.service&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now let’s check if the server is up.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ links &amp;lt;your_ip_address&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you see apache server page, then your server is up and running.
+Now, we will enable indexing in the server.&lt;/p&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ nano /etc/httpd/conf.d/welcome.conf&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In the file, search for set -indexes and change it to set +indexes. If it is commented, then uncomment it by removing # from it.&lt;/p&gt;
+
+&lt;p&gt;Now we will restart apache to apply the changes.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ systemctl restart httpd&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we will install PHP 5.6.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ yum search php&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We will check, if PHP is working on our system or not.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ echo -e &quot;&amp;lt;?php\nphpinfo();\n?&amp;gt;&quot; &amp;gt;&amp;gt; /var/www/html/phpinfo.php&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To check if the php file is working, just type:-&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ links http://&amp;lt;ip_address&amp;gt;/phpinfo.php&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, we will install mariaDB.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ yum install mariadb-server mariadb&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, we will start mariaDB service.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ systemctl start mariadb.service&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ systemctl enable mariadb.service&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To access the database via the terminal (I dont prefer phpmyadmin).&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ mysql -u root -p&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, lets install gcc (C++ compiler) in the system.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ yum install gcc&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now, let’s install java.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ yum install java&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, we will install Apache Tomcat.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ yum install tomcat&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, let’s start tomcat.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ systemctl start tomcat&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ systemctl enable tomcat.service&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We have to open a port on our firewall. To do that:-&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ firewall-cmd --zone=public --add-port=8080/tcp --permanent&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ firewall-cmd --reload&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, let’s install nmap. The nmap is an open-source security scanner.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ yum install nmap&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To download files from the internet, we use wget. We will now install wget.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ yum install wget&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To unzip files, we need unzip. To install unzip, do the following:-&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ yum install unzip&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, we will install an exploit and backdoor scanner called rootkit hunter.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ yum install rkhunter&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To start the scanner, just type.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ rkhunter --check&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When you have a server, you need to have a web panel. We will install a Webmin for satisfying that purpose.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ wget http://prdownloads.sourceforge.net/webadmin/webmin-1.740-1.noarch.rpm&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ rpm -ivh webmin-1.740-1.noarch.rpm&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, we have to open the port for accessing it remotely via a web browser.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ firewall-cmd --zone=public --add-port=10000/tcp --permanent&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ firewall-cmd --reload&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sashwat K</name></author><summary type="html"></summary></entry><entry><title type="html">My Take On DevOps</title><link href="https://www.sashwat.in/devops/my-take-on-devops/" rel="alternate" type="text/html" title="My Take On DevOps" /><published>2018-10-17T00:00:00+05:30</published><updated>2018-10-17T18:35:34+05:30</updated><id>https://www.sashwat.in/devops/my-take-on-devops</id><content type="html" xml:base="https://www.sashwat.in/devops/my-take-on-devops/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/my-take-on-devops/devops-cover.png&quot; alt=&quot;DevOps&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;what-is-devops&quot;&gt;What is DevOps?&lt;/h2&gt;
 
@@ -81,7 +254,7 @@ The following tools (that I have used) are used at different stages:-&lt;/p&gt;
   &lt;li&gt;Monitor - Nagios, slack&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Let’s consider an example of a company that has implemented DevOps methodology in their product and have used few tools for automation. The tool Jenkins (integration tool) detects changes in code and automatically triggers a build using tools like Gradle or Maven. After the build, Jenkins will deploy the code for testing. The testing is done by test tools like Selenium (if web app), JUnit (For Java apps) or any other testing tool. The deployment is handled using Docker. The running code is then monitored by tools like Nagios, Splunk or ELK Slack.&lt;/p&gt;</content><author><name>Sashwat K</name></author><summary type="html"></summary></entry><entry><title type="html">Setup Localhost in MacOS</title><link href="https://www.sashwat.in/linux/macos/setup-localhost-mac/" rel="alternate" type="text/html" title="Setup Localhost in MacOS" /><published>2018-10-11T00:00:00+05:30</published><updated>2018-10-11T18:35:34+05:30</updated><id>https://www.sashwat.in/linux/macos/setup-localhost-mac</id><content type="html" xml:base="https://www.sashwat.in/linux/macos/setup-localhost-mac/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/localhost-on-mac.jpg&quot; alt=&quot;WoLAN&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Let’s consider an example of a company that has implemented DevOps methodology in their product and have used few tools for automation. The tool Jenkins (integration tool) detects changes in code and automatically triggers a build using tools like Gradle or Maven. After the build, Jenkins will deploy the code for testing. The testing is done by test tools like Selenium (if web app), JUnit (For Java apps) or any other testing tool. The deployment is handled using Docker. The running code is then monitored by tools like Nagios, Splunk or ELK Slack.&lt;/p&gt;</content><author><name>Sashwat K</name></author><summary type="html"></summary></entry><entry><title type="html">Setup Localhost in MacOS</title><link href="https://www.sashwat.in/linux/macos/setup-localhost-mac/" rel="alternate" type="text/html" title="Setup Localhost in MacOS" /><published>2018-10-11T00:00:00+05:30</published><updated>2018-10-11T18:35:34+05:30</updated><id>https://www.sashwat.in/linux/macos/setup-localhost-mac</id><content type="html" xml:base="https://www.sashwat.in/linux/macos/setup-localhost-mac/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/localhost-on-mac.jpg&quot; alt=&quot;Localhost in mac&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I first started developing commerial products using HTML, CSS, Javascript and many more languages that were used to code client-side of a web application. I first encountered server-side languages while having a technical conversation with one of my seniors. This conversation motivated to learn PHP. While surfing the internet, I found we couldn’t execute server-side languages like client-side. That is, I couldn’t see the output just by executing the code via a browser. To execute server-side languages like PHP, I had to establish a server inside my mac.&lt;/p&gt;
 
