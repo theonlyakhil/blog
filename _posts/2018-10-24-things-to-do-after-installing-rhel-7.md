@@ -1,5 +1,5 @@
 ---
-title:  "Things to do after installing Fedora 28"
+title:  "Things to do after installing RHEL 7"
 search: true
 categories: 
   - Linux
