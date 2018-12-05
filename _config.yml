@@ -125,9 +125,6 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://sashuu6.github.io/"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: mailto:sashwat0001@gmail.com
 
 # Site Footer
 footer:
