@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.sashwat.in/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.sashwat.in/" rel="alternate" type="text/html" /><updated>2018-12-05T22:15:21+05:30</updated><id>https://www.sashwat.in/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name><email>sashwat0001@gmail.com</email></author><entry><title type="html">Things to do after installing RHEL 7</title><link href="https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7/" rel="alternate" type="text/html" title="Things to do after installing RHEL 7" /><published>2018-10-24T00:00:00+05:30</published><updated>2018-10-24T18:35:34+05:30</updated><id>https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7</id><content type="html" xml:base="https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/things-to-do-after-installing-rhel-7.png&quot; alt=&quot;RHEL7&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.sashwat.in/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.sashwat.in/" rel="alternate" type="text/html" /><updated>2018-12-16T10:03:47+05:30</updated><id>https://www.sashwat.in/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name><email>sashwat0001@gmail.com</email></author><entry><title type="html">Things to do after installing RHEL 7</title><link href="https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7/" rel="alternate" type="text/html" title="Things to do after installing RHEL 7" /><published>2018-10-24T00:00:00+05:30</published><updated>2018-10-24T18:35:34+05:30</updated><id>https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7</id><content type="html" xml:base="https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/things-to-do-after-installing-rhel-7.png&quot; alt=&quot;RHEL7&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The RHEL is RedHat Enterprise Linux,  a server distribution of Linux. RHEL is not like other Linux distribution because you have to pay money for the company’s services. But, the Operating System is free to use. The latest version of RHEL is RHEL 7.
 The following things where the first things I did, after install RHEL 7 on my virtual machine.
@@ -463,6 +463,7 @@ Execute the following command.&lt;/p&gt;
 
 &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ cd Downloads&lt;/span&gt; 
 &lt;span class=&quot;s&quot;&gt;$ mkdir post-fedora-install&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$ cd post-fedora-install&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Now, lets update the OS. If you are new to Fedora, the fedora’s update function will automatically update the repo list and will install the latest packages to the system.&lt;/p&gt;
 
@@ -501,11 +502,6 @@ Execute the following command.&lt;/p&gt;
 &lt;p&gt;Lets install Stacer. Stacer is an application to view system information and monitor all the system resources. As stacer is an open-source application, we must first download it from github.&lt;/p&gt;
 
 &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ wget https://github.com/oguzhaninan/Stacer/releases/download/v1.0.8/stacer-1.0.8_x64.rpm&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now lets install the downloaded rpm file.&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ dnf -y install stacer-1.0.8_x64.rpm&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Now lets install the downloaded rpm file.&lt;/p&gt;

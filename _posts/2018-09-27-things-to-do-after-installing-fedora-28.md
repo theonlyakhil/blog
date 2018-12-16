@@ -25,6 +25,7 @@ There are few rpm packages to download. So,
 ```yaml
 $ cd Downloads 
 $ mkdir post-fedora-install
+$ cd post-fedora-install
 ```
 Now, lets update the OS. If you are new to Fedora, the fedora's update function will automatically update the repo list and will install the latest packages to the system.
 
@@ -70,12 +71,6 @@ Lets install Stacer. Stacer is an application to view system information and mon
 
 ```yaml
 $ wget https://github.com/oguzhaninan/Stacer/releases/download/v1.0.8/stacer-1.0.8_x64.rpm
-```
-
-Now lets install the downloaded rpm file.
-
-```yaml
-$ dnf -y install stacer-1.0.8_x64.rpm
 ```
 
 Now lets install the downloaded rpm file.
