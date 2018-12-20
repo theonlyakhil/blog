@@ -40,3 +40,11 @@ header:
 ---
 content
 ```
+
+# Config.yml
+
+Configuring the file will be easy. Just replace my content with yours.
+
+# Breadcrumbs
+
+It is already activated. So you won't have an issue with it.
