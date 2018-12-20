@@ -29,13 +29,14 @@ The blog posts are written using markdown.
 2. Add the following lines at the top.
 ```markdown
 ---
-title:  "Things to do after installing Fedora 28"
+title:  "Title"
 search: true
 categories: 
-  - Linux
-  - Fedora
-last_modified_at: 2018-09-27T08:05:34-05:00
+  - category1
+  - category2
+last_modified_at: year-month-day Time
 header:
-  teaser: /assets/images/blog/things-to-do-after-installing-fedora-28.jpeg
+  teaser: image-location
 ---
+content
 ```
