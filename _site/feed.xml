@@ -1,4 +1,177 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.sashwat.in/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.sashwat.in/" rel="alternate" type="text/html" /><updated>2018-12-16T10:03:47+05:30</updated><id>https://www.sashwat.in/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name><email>sashwat0001@gmail.com</email></author><entry><title type="html">Things to do after installing RHEL 7</title><link href="https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7/" rel="alternate" type="text/html" title="Things to do after installing RHEL 7" /><published>2018-10-24T00:00:00+05:30</published><updated>2018-10-24T18:35:34+05:30</updated><id>https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7</id><content type="html" xml:base="https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/things-to-do-after-installing-rhel-7.png&quot; alt=&quot;RHEL7&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.sashwat.in/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.sashwat.in/" rel="alternate" type="text/html" /><updated>2018-12-23T09:29:51+05:30</updated><id>https://www.sashwat.in/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name><email>sashwat0001@gmail.com</email></author><entry><title type="html">DevOps Tool : Docker</title><link href="https://www.sashwat.in/devops/docker/devops-tool-docker/" rel="alternate" type="text/html" title="DevOps Tool : Docker" /><published>2018-11-01T00:00:00+05:30</published><updated>2018-12-01T18:35:34+05:30</updated><id>https://www.sashwat.in/devops/docker/devops-tool-docker</id><content type="html" xml:base="https://www.sashwat.in/devops/docker/devops-tool-docker/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/devops-tool-docker/devops-tool-docker.png&quot; alt=&quot;Docker&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;Docker is a tool used to perform operating system level virtualization (a.k.a containerization). The docker helps to run software through different containers. Many companies like Paypal, VISA and many more are using Docker to run their products.
+I first encountered docker when I was exploring DevOps and the tools under DevOps. Docker got my attention and I started learning docker and guess what? I fell in love with it. The concept of containerization and how docker helped me to create containers very easily really fascinated me.&lt;/p&gt;
+
+&lt;h1 id=&quot;why-docker&quot;&gt;Why Docker&lt;/h1&gt;
+
+&lt;p&gt;I just conveyed what docker is? and what is the purpose? Now we will discuss, why docker? The main issue that a Developer will face during his career is, the code not working in production server. But, it works just fine in their system. This issue is called environment issue. This issue is due to the difference in the configuration in the developer’s PC and the server. Docker solves this issue by making a virtual environment with all the necessary dependencies. This step helps to solve the dependency issue. The other advantage of docker is the easy implementation of micro-services. Micro-services are the processes that communicate through a network. The communication is basically client-server communication (but done in small chunks).&lt;/p&gt;
+
+&lt;h1 id=&quot;why-implement-mirco-services&quot;&gt;Why implement Mirco-services?&lt;/h1&gt;
+
+&lt;p&gt;The main advantage of implementing micro-services is the easy maintainability. Implementing micro-services helps to break the application into different chunks or pieces. These chunks or pieces are called services. These services are built in such a way that they have maximum cohesion and least coupling. Cohesion is the communication of different modules inside the service and coupling is the communication between 2 services. So, each service can be assigned to a different developer. As each developer assigns different dependencies ( depending on the application’s need, personal preference and many more reasons), the docker file can incorporate these dependencies easily.
+Before using Docker to implement micro-services, virtual machines where used. A virtual machine is an emulation of an actual PC. We can create virtual systems and install operating systems to run it. So to setup micro-services, the team had to create virtual machines (VM) and install operating systems and then run the service. That is, each service will be running on different virtual machines. Virtual machines can be made using applications like VirtualBox, VMware and many more. But, the best application for using virtual machines is KVM (Kernel Virtual Machine). But, KVM is only available to Linux. The main disadvantages of using VMs is that the developer has to specify the memory, processor count and disk space. The virtual machine will use these resource from the host machine even if the VM doesn’t need it. The other disadvantage of using virtual machines is that it becomes impractical when working on a large scale implementation. On the other hand, using Docker helps in easy implement of micro-services. Each docker container can be easily programmed to be a service. Docker doesn’t require any preallocation of memory, the container will automatically allocate the necessary resources dynamically.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-is-a-docker&quot;&gt;What is a Docker?&lt;/h1&gt;
+
+&lt;p&gt;Docker is a simple tool that has been designed in such a way that it can create, deploy and run applications or services using containers. It is considered as a lightweight alternative to VMs. The docker requires a host machine to work and can allocate its RAM dynamically.&lt;/p&gt;
+
+&lt;h1 id=&quot;advantages-of-docker&quot;&gt;Advantages of Docker&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Rapid application development:  The docker containers require fewer runtime resources and require the least storage. Due to this form factor, they are very easy to deploy.&lt;/li&gt;
+  &lt;li&gt;Portability: The services can be easily deployed in any servers via docker.&lt;/li&gt;
+  &lt;li&gt;Version control: Just like Git, Docker container is version controlled. The developer can track the versions of Docker container (service). As Docker has version control, the developer can inspect changes in the file and can rollback changes.&lt;/li&gt;
+  &lt;li&gt;Sharing: You can share your docker file with others through DockerHub. It is a remote repository to store docker files.&lt;/li&gt;
+  &lt;li&gt;Secure: If the docker file fails, it won’t affect the whole application. That is, a failed docker won’t crash the server.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;how-to-use-docker-work&quot;&gt;How to use Docker work?&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/devops-tool-docker/docker-working.png&quot; alt=&quot;Docker Working&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A developer will develop a service and convert the service into a container using Docker. This process is done by creating a docker file, which in turn becomes an image. The developer will then add the dependencies for this service by creating or adding docker images to the file. Eg: For running a web-based application, the developer will add Nginx server docker image and PHP docker image. When the developer runs the docker file, these images work together to run the program. The docker image when run, generates a docker container. After the successful running of the docker container, the developer can push the docker image to DockerHub. He can then pull the docker image remotely from any computer and run the docker file there. If the developer had developed a docker file for the production server, he can easily pull the image from DockerHub and run the image in the server.&lt;/p&gt;
+
+&lt;h1 id=&quot;docker-components&quot;&gt;Docker Components&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Docker Registry: Docker registry is the storage for all the docker images. These images can be public or private. The registry can be cloud-based or local. DockerHub is a cloud-based Docker registry.&lt;/li&gt;
+  &lt;li&gt;Docker image: A Docker image is a read-only template to create Docker containers. Docker image is built in such a way that it incorporates all the dependencies of the developed application.&lt;/li&gt;
+  &lt;li&gt;Docker container: A docker container is a running instance of a Docker image. A container can be a combination of more than one docker image.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;docker-bundle&quot;&gt;Docker Bundle&lt;/h1&gt;
+
+&lt;p&gt;The docker application consists of 4 software:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Docker engine: Docker engine creates and runs Docker containers.&lt;/li&gt;
+  &lt;li&gt;Docker CLI Client: Docker CLI client is the command-line interface to interact with Docker.&lt;/li&gt;
+  &lt;li&gt;Docker Compose: Docker compose is used to define and run multi-container Docker applications.&lt;/li&gt;
+  &lt;li&gt;Docker Machine: Docker machine is an application that lets the developer install docker engine on virtual hosts and helps the developer to manage the virtual hosts.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;docker-editions&quot;&gt;Docker Editions&lt;/h1&gt;
+
+&lt;p&gt;There are two Docker editions:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Docker CE (Community Edition): Docker CE is for the developers who have started learning docker.&lt;/li&gt;
+  &lt;li&gt;Docker EE (Enterprise Edition): Docker EE is for enterprise level development.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;docker-installation&quot;&gt;Docker Installation&lt;/h1&gt;
+
+&lt;h2 id=&quot;mac&quot;&gt;Mac&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download Docker for Mac using &lt;a href=&quot;https://download.docker.com/mac/beta/Docker.dmg&quot;&gt;this link&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Install Docker from dmg.&lt;/li&gt;
+  &lt;li&gt;After installation, open docker from applications.&lt;/li&gt;
+  &lt;li&gt;After opening, the docker whale will be available in Mac’s status bar.&lt;/li&gt;
+  &lt;li&gt;Open ‘about Docker Desktop’  to know the docker engine’s version and other relevant information.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/devops-tool-docker/about-docker-mac.png&quot; alt=&quot;Docker Mac&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ubuntu--debian&quot;&gt;Ubuntu / Debian&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First, we will update the repositories.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We will install the dependencies for Docker to work.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt install linux-image-extra-$(uname -r ) linux-image-extra-virtual -y
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We will now install docker on the machine.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install docker-engine
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;After installation, we have to start docker service.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo service docker start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;fedora&quot;&gt;Fedora&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Install dnf-plugins-core to manage Fedora’s repositories.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo dnf -y install dnf-plugins-core
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add Docker repository to the machine.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo dnf config-manager \
+ --add-repo \
+ https://download.docker.com/linux/fedora/docker-ce.repo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Install Docker-CE
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo dnf install docker-ce
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Start docker service.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo systemctl enable docker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To start, stop, restart and get status about Docker, use the respective commands.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo systemctl start docker.service ## &amp;lt;-- Start docker ##
+$ sudo systemctl stop docker.service ## &amp;lt;-- Stop docker ##
+$ sudo systemctl restart docker.service ## &amp;lt;-- Restart docker ##
+$ sudo systemctl status docker.service ## &amp;lt;-- Get status of docker ##
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;rhel--centos&quot;&gt;RHEL / CentOS&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Docker repo is already available in yum repository.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo yum install docker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Enable Docker service.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo systemctl enable docker.service
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To start, stop, restart and get status about Docker, use the respective commands.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo systemctl start docker.service ## &amp;lt;-- Start docker ##
+$ sudo systemctl stop docker.service ## &amp;lt;-- Stop docker ##
+$ sudo systemctl restart docker.service ## &amp;lt;-- Restart docker ##
+$ sudo systemctl status docker.service ## &amp;lt;-- Get status of docker ##
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;working-with-docker&quot;&gt;Working with Docker&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Pulling an image.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo docker pull docker-image
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run a Docker image.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo docker run docker-image
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;View Docker images.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo docker ps -as
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;or&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo container ls
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Remove Docker containers
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo docker rm image-name
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Remove Docker image
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo docker image rm image-name
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Sashwat K</name><email>sashwat0001@gmail.com</email></author><summary type="html"></summary></entry><entry><title type="html">Things to do after installing RHEL 7</title><link href="https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7/" rel="alternate" type="text/html" title="Things to do after installing RHEL 7" /><published>2018-10-24T00:00:00+05:30</published><updated>2018-10-24T18:35:34+05:30</updated><id>https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7</id><content type="html" xml:base="https://www.sashwat.in/linux/rhel/things-to-do-after-installing-rhel-7/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/things-to-do-after-installing-rhel-7.png&quot; alt=&quot;RHEL7&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The RHEL is RedHat Enterprise Linux,  a server distribution of Linux. RHEL is not like other Linux distribution because you have to pay money for the company’s services. But, the Operating System is free to use. The latest version of RHEL is RHEL 7.
 The following things where the first things I did, after install RHEL 7 on my virtual machine.

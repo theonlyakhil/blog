@@ -1,0 +1,864 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.13.0 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>DevOps Tool : Docker | Sashwat’s Blog</title>
+<meta name="description" content="">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sashwat's Blog">
+<meta property="og:title" content="DevOps Tool : Docker">
+<meta property="og:url" content="https://www.sashwat.in/devops/docker/devops-tool-docker/">
+
+
+  <meta property="og:description" content="">
+
+
+
+  <meta property="og:image" content="https://www.sashwat.in/assets/images/blog/devops-tool-docker/devops-tool-docker.png">
+
+
+
+  <meta name="twitter:site" content="@blackisashu">
+  <meta name="twitter:title" content="DevOps Tool : Docker">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:url" content="https://www.sashwat.in/devops/docker/devops-tool-docker/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://www.sashwat.in/assets/images/blog/devops-tool-docker/devops-tool-docker.png">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2018-11-01T00:00:00+05:30">
+
+
+
+  <meta property="article:modified_time" content="2018-12-01T18:35:34+05:30">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://www.sashwat.in/devops/docker/devops-tool-docker/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Sashwat K",
+      "url": "https://www.sashwat.in",
+      "sameAs": null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="fiBUPNsB5a_qXQ-s5t-fmfSLNz7RlNXfYav3KGhDBms" />
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sashwat's Blog Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Sashwat's Blog</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sashuu6.github.io" >Profile</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://sashuu6.github.io/Donate_button/" >Donate</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://www.sashwat.in/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="/categories/#devops" itemprop="item"><span itemprop="name">Devops</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="/categories/#docker" itemprop="item"><span itemprop="name">Docker</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">DevOps Tool : Docker</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/profile/sashwat.jpg" alt="Sashwat K" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Sashwat K</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        Just an average coder.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Thiruvananthapuram, India</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://www.linkedin.com/in/sashwat-k-25b30a11b" rel="nofollow noopener noreferrer"><i class="fab fa-fw fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+          
+        
+          
+            <li><a href="https://github.com/Sashuu6/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
+          
+        
+          
+            <li><a href="https://www.hackerrank.com/sashuu6" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-hackerrank" aria-hidden="true"></i> Hackerrank</a></li>
+          
+        
+          
+            <li><a href="https://stackoverflow.com/story/sashuu6/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i> Stack Overflow</a></li>
+          
+        
+          
+            <li><a href="https://www.quora.com/profile/Sashwat-K" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-quora" aria-hidden="true"></i> Quora</a></li>
+          
+        
+          
+            <li><a href="https://sashuu6.github.io/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:sashwat0001@gmail.com">
+            <meta itemprop="email" content="sashwat0001@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="DevOps Tool : Docker">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="November 01, 2018">
+    <meta itemprop="dateModified" content="December 01, 2018">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">DevOps Tool : Docker
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  6 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p><img src="/assets/images/blog/devops-tool-docker/devops-tool-docker.png" alt="Docker" /></p>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>Docker is a tool used to perform operating system level virtualization (a.k.a containerization). The docker helps to run software through different containers. Many companies like Paypal, VISA and many more are using Docker to run their products.
+I first encountered docker when I was exploring DevOps and the tools under DevOps. Docker got my attention and I started learning docker and guess what? I fell in love with it. The concept of containerization and how docker helped me to create containers very easily really fascinated me.</p>
+
+<h1 id="why-docker">Why Docker</h1>
+
+<p>I just conveyed what docker is? and what is the purpose? Now we will discuss, why docker? The main issue that a Developer will face during his career is, the code not working in production server. But, it works just fine in their system. This issue is called environment issue. This issue is due to the difference in the configuration in the developer’s PC and the server. Docker solves this issue by making a virtual environment with all the necessary dependencies. This step helps to solve the dependency issue. The other advantage of docker is the easy implementation of micro-services. Micro-services are the processes that communicate through a network. The communication is basically client-server communication (but done in small chunks).</p>
+
+<h1 id="why-implement-mirco-services">Why implement Mirco-services?</h1>
+
+<p>The main advantage of implementing micro-services is the easy maintainability. Implementing micro-services helps to break the application into different chunks or pieces. These chunks or pieces are called services. These services are built in such a way that they have maximum cohesion and least coupling. Cohesion is the communication of different modules inside the service and coupling is the communication between 2 services. So, each service can be assigned to a different developer. As each developer assigns different dependencies ( depending on the application’s need, personal preference and many more reasons), the docker file can incorporate these dependencies easily.
+Before using Docker to implement micro-services, virtual machines where used. A virtual machine is an emulation of an actual PC. We can create virtual systems and install operating systems to run it. So to setup micro-services, the team had to create virtual machines (VM) and install operating systems and then run the service. That is, each service will be running on different virtual machines. Virtual machines can be made using applications like VirtualBox, VMware and many more. But, the best application for using virtual machines is KVM (Kernel Virtual Machine). But, KVM is only available to Linux. The main disadvantages of using VMs is that the developer has to specify the memory, processor count and disk space. The virtual machine will use these resource from the host machine even if the VM doesn’t need it. The other disadvantage of using virtual machines is that it becomes impractical when working on a large scale implementation. On the other hand, using Docker helps in easy implement of micro-services. Each docker container can be easily programmed to be a service. Docker doesn’t require any preallocation of memory, the container will automatically allocate the necessary resources dynamically.</p>
+
+<h1 id="what-is-a-docker">What is a Docker?</h1>
+
+<p>Docker is a simple tool that has been designed in such a way that it can create, deploy and run applications or services using containers. It is considered as a lightweight alternative to VMs. The docker requires a host machine to work and can allocate its RAM dynamically.</p>
+
+<h1 id="advantages-of-docker">Advantages of Docker</h1>
+
+<ol>
+  <li>Rapid application development:  The docker containers require fewer runtime resources and require the least storage. Due to this form factor, they are very easy to deploy.</li>
+  <li>Portability: The services can be easily deployed in any servers via docker.</li>
+  <li>Version control: Just like Git, Docker container is version controlled. The developer can track the versions of Docker container (service). As Docker has version control, the developer can inspect changes in the file and can rollback changes.</li>
+  <li>Sharing: You can share your docker file with others through DockerHub. It is a remote repository to store docker files.</li>
+  <li>Secure: If the docker file fails, it won’t affect the whole application. That is, a failed docker won’t crash the server.</li>
+</ol>
+
+<h1 id="how-to-use-docker-work">How to use Docker work?</h1>
+
+<p><img src="/assets/images/blog/devops-tool-docker/docker-working.png" alt="Docker Working" /></p>
+
+<p>A developer will develop a service and convert the service into a container using Docker. This process is done by creating a docker file, which in turn becomes an image. The developer will then add the dependencies for this service by creating or adding docker images to the file. Eg: For running a web-based application, the developer will add Nginx server docker image and PHP docker image. When the developer runs the docker file, these images work together to run the program. The docker image when run, generates a docker container. After the successful running of the docker container, the developer can push the docker image to DockerHub. He can then pull the docker image remotely from any computer and run the docker file there. If the developer had developed a docker file for the production server, he can easily pull the image from DockerHub and run the image in the server.</p>
+
+<h1 id="docker-components">Docker Components</h1>
+
+<ol>
+  <li>Docker Registry: Docker registry is the storage for all the docker images. These images can be public or private. The registry can be cloud-based or local. DockerHub is a cloud-based Docker registry.</li>
+  <li>Docker image: A Docker image is a read-only template to create Docker containers. Docker image is built in such a way that it incorporates all the dependencies of the developed application.</li>
+  <li>Docker container: A docker container is a running instance of a Docker image. A container can be a combination of more than one docker image.</li>
+</ol>
+
+<h1 id="docker-bundle">Docker Bundle</h1>
+
+<p>The docker application consists of 4 software:-</p>
+<ol>
+  <li>Docker engine: Docker engine creates and runs Docker containers.</li>
+  <li>Docker CLI Client: Docker CLI client is the command-line interface to interact with Docker.</li>
+  <li>Docker Compose: Docker compose is used to define and run multi-container Docker applications.</li>
+  <li>Docker Machine: Docker machine is an application that lets the developer install docker engine on virtual hosts and helps the developer to manage the virtual hosts.</li>
+</ol>
+
+<h1 id="docker-editions">Docker Editions</h1>
+
+<p>There are two Docker editions:-</p>
+<ol>
+  <li>Docker CE (Community Edition): Docker CE is for the developers who have started learning docker.</li>
+  <li>Docker EE (Enterprise Edition): Docker EE is for enterprise level development.</li>
+</ol>
+
+<h1 id="docker-installation">Docker Installation</h1>
+
+<h2 id="mac">Mac</h2>
+
+<ol>
+  <li>Download Docker for Mac using <a href="https://download.docker.com/mac/beta/Docker.dmg">this link</a>.</li>
+  <li>Install Docker from dmg.</li>
+  <li>After installation, open docker from applications.</li>
+  <li>After opening, the docker whale will be available in Mac’s status bar.</li>
+  <li>Open ‘about Docker Desktop’  to know the docker engine’s version and other relevant information.</li>
+</ol>
+
+<p><img src="/assets/images/blog/devops-tool-docker/about-docker-mac.png" alt="Docker Mac" /></p>
+
+<h2 id="ubuntu--debian">Ubuntu / Debian</h2>
+
+<ol>
+  <li>First, we will update the repositories.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get update
+</code></pre></div>    </div>
+  </li>
+  <li>We will install the dependencies for Docker to work.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt install linux-image-extra-$(uname -r ) linux-image-extra-virtual -y
+</code></pre></div>    </div>
+  </li>
+  <li>We will now install docker on the machine.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install docker-engine
+</code></pre></div>    </div>
+  </li>
+  <li>After installation, we have to start docker service.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo service docker start
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="fedora">Fedora</h2>
+
+<ol>
+  <li>Install dnf-plugins-core to manage Fedora’s repositories.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo dnf -y install dnf-plugins-core
+</code></pre></div>    </div>
+  </li>
+  <li>Add Docker repository to the machine.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo dnf config-manager \
+ --add-repo \
+ https://download.docker.com/linux/fedora/docker-ce.repo
+</code></pre></div>    </div>
+  </li>
+  <li>Install Docker-CE
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo dnf install docker-ce
+</code></pre></div>    </div>
+  </li>
+  <li>Start docker service.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo systemctl enable docker
+</code></pre></div>    </div>
+  </li>
+  <li>To start, stop, restart and get status about Docker, use the respective commands.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo systemctl start docker.service ## &lt;-- Start docker ##
+$ sudo systemctl stop docker.service ## &lt;-- Stop docker ##
+$ sudo systemctl restart docker.service ## &lt;-- Restart docker ##
+$ sudo systemctl status docker.service ## &lt;-- Get status of docker ##
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="rhel--centos">RHEL / CentOS</h2>
+
+<ol>
+  <li>Docker repo is already available in yum repository.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo yum install docker
+</code></pre></div>    </div>
+  </li>
+  <li>Enable Docker service.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo systemctl enable docker.service
+</code></pre></div>    </div>
+  </li>
+  <li>To start, stop, restart and get status about Docker, use the respective commands.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo systemctl start docker.service ## &lt;-- Start docker ##
+$ sudo systemctl stop docker.service ## &lt;-- Stop docker ##
+$ sudo systemctl restart docker.service ## &lt;-- Restart docker ##
+$ sudo systemctl status docker.service ## &lt;-- Get status of docker ##
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h1 id="working-with-docker">Working with Docker</h1>
+
+<ol>
+  <li>Pulling an image.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo docker pull docker-image
+</code></pre></div>    </div>
+  </li>
+  <li>Run a Docker image.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo docker run docker-image
+</code></pre></div>    </div>
+  </li>
+  <li>View Docker images.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo docker ps -as
+</code></pre></div>    </div>
+    <p>or</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo container ls
+</code></pre></div>    </div>
+  </li>
+  <li>Remove Docker containers
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo docker rm image-name
+</code></pre></div>    </div>
+  </li>
+  <li>Remove Docker image
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo docker image rm image-name
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#devops" class="page__taxonomy-item" rel="tag">DevOps</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#docker" class="page__taxonomy-item" rel="tag">Docker</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-12-01">December 01, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=blackisashu&text=DevOps+Tool+%3A+Docker%20https%3A%2F%2Fwww.sashwat.in%2Fdevops%2Fdocker%2Fdevops-tool-docker%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.sashwat.in%2Fdevops%2Fdocker%2Fdevops-tool-docker%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.sashwat.in%2Fdevops%2Fdocker%2Fdevops-tool-docker%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.sashwat.in%2Fdevops%2Fdocker%2Fdevops-tool-docker%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/linux/rhel/things-to-do-after-installing-rhel-7/" class="pagination--pager" title="Things to do after installing RHEL 7
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/blog/things-to-do-after-installing-rhel-7.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/linux/rhel/things-to-do-after-installing-rhel-7/" rel="permalink">Things to do after installing RHEL 7
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/blog/my-take-on-devops/devops-cover.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/devops/my-take-on-devops/" rel="permalink">My Take On DevOps
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/blog/localhost-on-mac.jpg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/linux/macos/setup-localhost-mac/" rel="permalink">Setup Localhost in MacOS
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/blog/setup-wake-on-lan.jpg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/linux/networking/wake-on-lan-on-local-server/" rel="permalink">Setup wake on LAN on local server
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://www.instagram.com/sashuu6/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://www.facebook.com/sashuu6" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/blackisashu" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://steamcommunity.com/id/dodger7/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-steam" aria-hidden="true"></i> Steam</a></li>
+        
+      
+        
+          <li><a href="https://www.reddit.com/user/sashuu6/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> Reddit</a></li>
+        
+      
+        
+          <li><a href="https://www.pinterest.com/sashuu6/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-pinterest" aria-hidden="true"></i> Pinterest</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Sashwat K. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>. <a href="https://www.freeprivacypolicy.com/privacy/view/8e94155265d9bc4e96576c0af31f939a">Privacy policy</a></div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://www.sashwat.in/devops/docker/devops-tool-docker/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/devops/docker/devops-tool-docker"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-www-sashwat-in.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+  </body>
+</html>
