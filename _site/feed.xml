@@ -1,4 +1,182 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.sashwat.in/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.sashwat.in/" rel="alternate" type="text/html" /><updated>2018-12-23T09:29:51+05:30</updated><id>https://www.sashwat.in/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name><email>sashwat0001@gmail.com</email></author><entry><title type="html">DevOps Tool : Docker</title><link href="https://www.sashwat.in/devops/docker/devops-tool-docker/" rel="alternate" type="text/html" title="DevOps Tool : Docker" /><published>2018-11-01T00:00:00+05:30</published><updated>2018-12-01T18:35:34+05:30</updated><id>https://www.sashwat.in/devops/docker/devops-tool-docker</id><content type="html" xml:base="https://www.sashwat.in/devops/docker/devops-tool-docker/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/devops-tool-docker/devops-tool-docker.png&quot; alt=&quot;Docker&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.sashwat.in/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.sashwat.in/" rel="alternate" type="text/html" /><updated>2019-01-08T23:49:51+05:30</updated><id>https://www.sashwat.in/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name><email>sashwat0001@gmail.com</email></author><entry><title type="html">PHP and MySQL Installation and Why no need for Web Server</title><link href="https://www.sashwat.in/web/PHP-installation/" rel="alternate" type="text/html" title="PHP and MySQL Installation and Why no need for Web Server" /><published>2018-11-15T00:00:00+05:30</published><updated>2018-11-15T18:35:34+05:30</updated><id>https://www.sashwat.in/web/PHP-installation</id><content type="html" xml:base="https://www.sashwat.in/web/PHP-installation/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/setting-Up-localhost.jpg&quot; alt=&quot;setting-up-localhost&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;why-setup-localhost&quot;&gt;Why setup localhost&lt;/h1&gt;
+
+&lt;p&gt;PHP: Hypertext Pre-Processor is an open-source server-side scripting language used for web development. If you are reading this blog, it’s pretty evident that you know how to use PHP and you are now trying to install PHP in your computer. As PHP is a server-side scripting language, the developer can run any PHP code via the browser.&lt;/p&gt;
+
+&lt;h1 id=&quot;usual-php-installation&quot;&gt;Usual PHP installation&lt;/h1&gt;
+
+&lt;p&gt;Usually, for working on PHP, the developer has to install:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Web Server&lt;/li&gt;
+  &lt;li&gt;MySQL (if you are using database)&lt;/li&gt;
+  &lt;li&gt;PHP&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;types-of-installation&quot;&gt;Types of Installation&lt;/h1&gt;
+
+&lt;p&gt;Depending on your operating system, the installatio can be classified into:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;MAMP Server (Mac, Apache2, MySQL, PHP)&lt;/li&gt;
+  &lt;li&gt;LAMP Server (Linux, Apache2, MySQL, PHP)&lt;/li&gt;
+  &lt;li&gt;WAMP Server (Windows, Apache2, MySQL, PHP)&lt;/li&gt;
+  &lt;li&gt;X-AMPP Server (Any Operating system, Apache2, MySQL, PHP, Perl)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;why-install-web-server-or-why-not-install-web-server&quot;&gt;Why Install Web Server or Why not Install Web Server&lt;/h1&gt;
+
+&lt;p&gt;Web server is required if you are setting up a server. If you are setting up for development. You can run your PHP code using the following command.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ php -S 0.0.0.0:8080
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After executing the command, you can open the address in your browser to open your site.&lt;/p&gt;
+
+&lt;h1 id=&quot;installing-mamp-server&quot;&gt;Installing MAMP Server&lt;/h1&gt;
+
+&lt;p&gt;I have already written a blog on how to setup a server on Mac in &lt;a href=&quot;https://www.sashwat.in/linux/macos/setup-localhost-mac/&quot;&gt;this link&lt;/a&gt;. Just skip install web server (Apache) (If for setting up localhost). There is another way to install a MAMP server. There is a application named MAMP server that can be used to activate web server on a click. To install, goto &lt;a href=&quot;https://www.mamp.info/en/&quot;&gt;this link&lt;/a&gt;. Just install the .dmg and follow the instructions to install the MAMP server.&lt;/p&gt;
+
+&lt;h1 id=&quot;installing-lamp-server&quot;&gt;Installing LAMP Server&lt;/h1&gt;
+
+&lt;h2 id=&quot;fedora&quot;&gt;Fedora&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First, we will update the system.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo yum update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Let’s install web server (Dont install if for localhost).
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo yum install httpd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Let’s start the httpd service.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo service httpd start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, we will install MySQL for working on databases.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo yum install mysql mysql-server
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, we will start MySQL service.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo service mysqld start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, we have to setup root password for MySQL.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo /usr/bin/mysql_secure_installation
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Let’s install PHP.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo yum install php php-mysql
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, we have to configure the server and MySQL service to start automatically after every boot. If for localhost, don’t configure the server. Just configure MySQL.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo chkconfig httpd on
+$ sudo chkconfig mysqld on
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;For server, to check, we will create a PHP file in web home directory.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo nano /var/www/html/info.php
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To check if PHP is working, we will run phpinfo().
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo echo &quot;&amp;lt;?php phpinfo(); ?&amp;gt;&quot; &amp;gt;&amp;gt; /var/www/html/info.php
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open browser and goto localhost/info.php. If PHP not working, you will get a blank page or the php code will be visible.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If you want to use phpmyadmin, install phpmyadmin by using the following command. If you are using phpmyadmin, then you have to install web server.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo dnf -y install phpMyAdmin php-mysqlnd php-mcrypt php-php-gettext
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Restart apache server.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo systemctl restart httpd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;rhel--centos&quot;&gt;RHEL / CentOS&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Update the system.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo yum update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Install web server.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo yum install httpd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add firewall exception to HTTP service.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ firewall-cmd --permanent --add-service=http
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, we have to restart firewall to implement changes.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ systemctl restart firewalld
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, we open port 80 in firewall.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ firewall-cmd —add-port=80/tcp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, we will install PHP.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo yum install php php-mysql php-pdo php-gd php-mbstring
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We will check if PHP is working by running phpinfo().
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ echo &quot;&amp;lt;?php phpinfo(); ?&amp;gt;&quot; &amp;gt;&amp;gt; /var/www/html/info.php 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;Now check if PHP is working by opening localhost/info.php in your browser.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, we will install mariaDB for database.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo yum install mariadb-server mariadb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Start the database service.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo systemctl start mariadb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, we have to setup root password for MySQL.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ mysql_secure_installation
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To install phpmyadmin.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo yum install http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
+$ sudo yum install phpmyadmin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We have to edit phpmyadmin configuration file.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ nano /etc/httpd/conf.d/phpmyadmin.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Remove # (comment) from the following lines inside the file.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Order Deny,Allow
+Deny from all
+Allow from 127.0.0.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now we have to enable httpd and mariadb so that they will start automatically after every boot.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ systemctl enable mariadb
+$ systemctl enable httpd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;installing-wampserver&quot;&gt;Installing WAMPSERVER&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download Wampserver using &lt;a href=&quot;http://www.wampserver.com/en/#download-wrapper&quot;&gt;this link&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Open installation file and follow the steps to install it to the system.&lt;/li&gt;
+  &lt;li&gt;Open wampserver to enable webserver, database and PHP.&lt;/li&gt;
+  &lt;li&gt;To check if wampserver is working, goto http://localhost in the browser.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;installing-xampp-server&quot;&gt;Installing XAMPP server&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download XAMPP using &lt;a href=&quot;https://www.apachefriends.org/index.html&quot;&gt;this link&lt;/a&gt;. Download the installation file for your operating system.&lt;/li&gt;
+  &lt;li&gt;Install it by following the instructions.&lt;/li&gt;
+  &lt;li&gt;Open XAMPP to enable apache, mysql and php.&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Sashwat K</name><email>sashwat0001@gmail.com</email></author><summary type="html"></summary></entry><entry><title type="html">DevOps Tool : Docker</title><link href="https://www.sashwat.in/devops/docker/devops-tool-docker/" rel="alternate" type="text/html" title="DevOps Tool : Docker" /><published>2018-11-01T00:00:00+05:30</published><updated>2018-12-01T18:35:34+05:30</updated><id>https://www.sashwat.in/devops/docker/devops-tool-docker</id><content type="html" xml:base="https://www.sashwat.in/devops/docker/devops-tool-docker/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/devops-tool-docker/devops-tool-docker.png&quot; alt=&quot;Docker&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
 
