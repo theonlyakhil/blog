@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Things to do after installing Fedora 28 | Sashwat’s Blog</title>
+<!-- begin _includes/seo.html --><title>Simple Home Automation using Pi Zero W, Particle.io, Google assistant and IFTTT | Sashwat’s Blog</title>
 <meta name="description" content="">
 
 
@@ -17,27 +17,27 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Sashwat's Blog">
-<meta property="og:title" content="Things to do after installing Fedora 28">
-<meta property="og:url" content="https://www.sashwat.in/linux/fedora/things-to-do-after-installing-fedora-28/">
+<meta property="og:title" content="Simple Home Automation using Pi Zero W, Particle.io, Google assistant and IFTTT">
+<meta property="og:url" content="https://www.sashwat.in/raspberry%20pi/home%20automation/simple-home-automation/">
 
 
   <meta property="og:description" content="">
 
 
 
-  <meta property="og:image" content="https://www.sashwat.in/assets/images/blog/things-to-do-after-installing-fedora-28.jpeg">
+  <meta property="og:image" content="https://www.sashwat.in/assets/images/blog/simple-home-automation/simple-home-automation.png">
 
 
 
   <meta name="twitter:site" content="@blackisashu">
-  <meta name="twitter:title" content="Things to do after installing Fedora 28">
+  <meta name="twitter:title" content="Simple Home Automation using Pi Zero W, Particle.io, Google assistant and IFTTT">
   <meta name="twitter:description" content="">
-  <meta name="twitter:url" content="https://www.sashwat.in/linux/fedora/things-to-do-after-installing-fedora-28/">
+  <meta name="twitter:url" content="https://www.sashwat.in/raspberry%20pi/home%20automation/simple-home-automation/">
 
   
     <meta name="twitter:card" content="summary">
     
-      <meta name="twitter:image" content="https://www.sashwat.in/assets/images/blog/things-to-do-after-installing-fedora-28.jpeg">
+      <meta name="twitter:image" content="https://www.sashwat.in/assets/images/blog/simple-home-automation/simple-home-automation.png">
     
   
 
@@ -45,11 +45,11 @@
 
 
 
-  <meta property="article:published_time" content="2018-09-27T00:00:00+05:30">
+  <meta property="article:published_time" content="2018-12-17T00:00:00+05:30">
 
 
 
-  <meta property="article:modified_time" content="2018-09-27T18:35:34+05:30">
+  <meta property="article:modified_time" content="2018-12-17T18:35:34+05:30">
 
 
 
@@ -58,7 +58,7 @@
   
 
 
-<link rel="canonical" href="https://www.sashwat.in/linux/fedora/things-to-do-after-installing-fedora-28/">
+<link rel="canonical" href="https://www.sashwat.in/raspberry%20pi/home%20automation/simple-home-automation/">
 
 
 
@@ -182,7 +182,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a href="/categories/#linux" itemprop="item"><span itemprop="name">Linux</span></a>
+          <a href="/categories/#raspberry-pi" itemprop="item"><span itemprop="name">Raspberry pi</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -192,7 +192,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a href="/categories/#fedora" itemprop="item"><span itemprop="name">Fedora</span></a>
+          <a href="/categories/#home-automation" itemprop="item"><span itemprop="name">Home automation</span></a>
           <meta itemprop="position" content="3" />
         </li>
         <span class="sep">/</span>
@@ -200,7 +200,7 @@
     
       
       
-        <li class="current">Things to do after installing Fedora 28</li>
+        <li class="current">Simple Home Automation using Pi Zero W, Particle.io, Google assistant and IFTTT</li>
       
     
   </ol>
@@ -348,15 +348,15 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Things to do after installing Fedora 28">
+    <meta itemprop="headline" content="Simple Home Automation using Pi Zero W, Particle.io, Google assistant and IFTTT">
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="September 27, 2018">
-    <meta itemprop="dateModified" content="September 27, 2018">
+    <meta itemprop="datePublished" content="December 17, 2018">
+    <meta itemprop="dateModified" content="December 17, 2018">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Things to do after installing Fedora 28
+          <h1 id="page-title" class="page__title" itemprop="headline">Simple Home Automation using Pi Zero W, Particle.io, Google assistant and IFTTT
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -372,132 +372,131 @@
 
       <section class="page__content" itemprop="text">
         
-        <p><img src="/assets/images/blog/things-to-do-after-installing-fedora-28.jpeg" alt="Fedora 28" /></p>
+        <p><img src="/assets/images/blog/simple-home-automation/simple-home-automation.png" alt="simple-home-automation" /></p>
 
-<p>Fedora has been my favourite from the day I started using Fedora. As Fedora was sponsored by Red Hat, I had to make sure I gave it a try. I started my linux life using Ubuntu. Switching from Ubuntu to Fedora was not a easy task. I found first few days of using Fedora a bit hard. So, after gaining some experience using Fedora, gave me an idea to write a blog about the initial steps to be performed by a newbie Fedora user or a user who has just installed Fedora. When I was planning to write the blog, came the release of Fedora 28.</p>
+<h1 id="introduction">Introduction</h1>
 
-<p>These are the steps I followed after installing Fedora 28.</p>
+<p>Almost everyone’s dream is to have an automated home. But, automated home is expensive and developing on your own is a major task until now. Today we will make simple home automation device using Raspberry Pi Zero W that can automate a switch using relays.</p>
 
-<p>First, we will switch to superuser.</p>
+<h1 id="hardware-requirements">Hardware Requirements</h1>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ sudo su</span>
-</code></pre></div></div>
-<p>There are few rpm packages to download. So,</p>
+<ol>
+  <li>Raspberry Pi Zero W - 1</li>
+  <li>2 - Channel relay</li>
+  <li>Some wires</li>
+</ol>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ cd Downloads</span> 
-<span class="s">$ mkdir post-fedora-install</span>
-<span class="s">$ cd post-fedora-install</span>
-</code></pre></div></div>
-<p>Now, lets update the OS. If you are new to Fedora, the fedora’s update function will automatically update the repo list and will install the latest packages to the system.</p>
+<h1 id="software-requirements">Software Requirements</h1>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y update</span>
-</code></pre></div></div>
+<ol>
+  <li>Particle.io account</li>
+  <li>IFTTT application</li>
+</ol>
 
-<p>Lets start the SSH server. SSH will help to connect to your system remotely from another system in the same network.</p>
+<h1 id="things-to-know-before-the-build">Things to know before the build</h1>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ systemctl start sshd</span> 
-<span class="s">$ systemctl enable sshd</span>
-</code></pre></div></div>
+<h2 id="particleio-pin-diagram">Particle.io Pin diagram</h2>
 
-<p>Lets install RPM fusion repository into the system. The fusion repository will help to install all free and non free 3rd party applications.</p>
+<p>The pin numbering of particle.io on Raspberry Pi is different from the standard one. The below diagram will explain.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ rpm -ivh https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-28.noarch.rpm</span> 
-<span class="s">$ rpm -ivh https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm</span> 
-<span class="s">$ dnf -y update</span>
-</code></pre></div></div>
+<p><img src="/assets/images/blog/simple-home-automation/particle-io-pin-diagram.png" alt="Particle.io Pin Diagram" /></p>
 
-<p>If you are using GNOME, installing the GNOME tweak tool will help you customize the desktop environment.</p>
+<h1 id="instructions">Instructions</h1>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install gnome-tweak-tool</span>
-</code></pre></div></div>
+<h2 id="1-initial-step">1. Initial step</h2>
 
-<p>Lets install some media codecs to view all media files.</p>
+<ol>
+  <li>Log in to github and to <a href="https://github.com/Sashuu6/my-room-automation-project">this link</a> and fork the github repository.</li>
+  <li>Download the repository to your computer.</li>
+</ol>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install gstreamer-plugins-base gstreamer1-plugins-base gstreamer-plugins-bad gstreamer-plugins-ugly gstreamer1-plugins-ugly gstreamer-plugins-good-extras gstreamer1-plugins-good-extras gstreamer1-plugins-bad-freeworld ffmpeg gstreamer-ffmpeg</span>
+<h2 id="2-particleio">2. Particle.io</h2>
 
-</code></pre></div></div>
+<ol>
+  <li>
+    <p>Goto to particle.io webIDE using <a href="https://build.particle.io/build/new">this link</a>.
+<img src="/assets/images/blog/simple-home-automation/particle-io-1.png" alt="Particle.io Pin Diagram" /></p>
+  </li>
+  <li>
+    <p>Add title and copy the code from the downloaded repository (present in code/main_program/main_program.ino) and paste it on the code editor.</p>
+  </li>
+  <li>
+    <p>Click on the compile ( present at left, above the folder symbol).</p>
+  </li>
+</ol>
 
-<p>Lets install VLC.</p>
+<h2 id="3-setup-raspberry-pi-zero-w">3. Setup Raspberry Pi Zero W</h2>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install vlc</span>
-</code></pre></div></div>
+<ol>
+  <li>Download <a href="https://www.balena.io/etcher/">etcher</a> and install it on your system.</li>
+  <li>Download raspberry pi stretch <a href="https://downloads.raspberrypi.org/raspbian_lite_latest">image</a>.</li>
+  <li>Flash the image to an SD card via the etcher.</li>
+  <li>Remove and insert sdcard into the system.</li>
+  <li>Create a file ssh inside boot.</li>
+  <li>Create another file named wpa_supplicant.conf inside boot and add the following code to insert Wi-Fi credentials.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+network={
+ ssid="YOUR_NETWORK_NAME"
+ psk="YOUR_PASSWORD"
+ key_mgmt=WPA-PSK
+}
+</code></pre></div>    </div>
+    <p>Replace YOUR_NETWORK_NAME with your WiFi’s ssid and YOUR_PASSWORD with it’s password.</p>
+  </li>
+  <li>Now, insert the sdcard inside the Raspberry Pi Zero W and fire up the Pi.</li>
+  <li>Find the Raspberry Pi’s IP address. You can do that by using applications like Fling.</li>
+  <li>now ssh to the Pi using your Linux or Mac system. If you are using Windows ( First of all goto hell because you are using Windows), then download putty to ssh to the Pi.</li>
+  <li>To SSH into the Pi.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ssh pi@ipaddress
+</code></pre></div>    </div>
+  </li>
+  <li>Now, update and upgrade the Pi.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt update &amp;&amp; apt upgrade
+</code></pre></div>    </div>
+  </li>
+  <li>Install particle.io client into the Pi.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bash &lt;( curl -sL https://particle.io/install-pi )
+</code></pre></div>    </div>
+    <p>You will be asked to enter your particle.io username and password. Also add the name of the Pi. Now the Pi is setup.</p>
+  </li>
+  <li>Now upload the code to the Pi (Present on the left side of the WebIDE).
+<img src="/assets/images/blog/simple-home-automation/particle-io-2.png" alt="Particle.io Pin Diagram" /></li>
+</ol>
 
-<p>Lets install Stacer. Stacer is an application to view system information and monitor all the system resources. As stacer is an open-source application, we must first download it from github.</p>
+<h2 id="4-connecting-relay-with-raspberry-pi-zero-w">4. Connecting relay with Raspberry Pi Zero W</h2>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ wget https://github.com/oguzhaninan/Stacer/releases/download/v1.0.8/stacer-1.0.8_x64.rpm</span>
-</code></pre></div></div>
+<ol>
+  <li>Connect D0 of Raspberry Pi (Refer pin diagram from above) to relay 1.</li>
+  <li>Connect D1 of Raspberry Pi to relay 2.</li>
+  <li>Connect 5v for relay’s power.</li>
+  <li>Connect GND of Pi to GND of the 2 relays.</li>
+</ol>
 
-<p>Now lets install the downloaded rpm file.</p>
+<p><img src="/assets/images/blog/simple-home-automation/complete-image.jpg" alt="Final image" /></p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install stacer-1.0.8_x64.rpm</span>
-</code></pre></div></div>
+<h2 id="5-setup-ifttt">5. Setup IFTTT</h2>
 
-<p>Lets install a torrent client. qbittorrent works just fine for Fedora 28.</p>
+<ol>
+  <li>Click ‘+’ from the app.
+<img src="/assets/images/blog/simple-home-automation/0.jpg" alt="Final image" /></li>
+  <li>Click ‘this’.
+<img src="/assets/images/blog/simple-home-automation/1.jpg" alt="Final image" /></li>
+  <li>Search google assistant and click on it.
+<img src="/assets/images/blog/simple-home-automation/2.jpg" alt="Final image" /></li>
+  <li>Click ‘say a simple phrase’.
+<img src="/assets/images/blog/simple-home-automation/3.jpg" alt="Final image" /></li>
+  <li>Specify the credentials as below.
+<img src="/assets/images/blog/simple-home-automation/4.jpg" alt="Final image" /></li>
+  <li>Click ‘that’.
+<img src="/assets/images/blog/simple-home-automation/5.jpg" alt="Final image" /></li>
+  <li>search and select ‘particle.io’.
+<img src="/assets/images/blog/simple-home-automation/6.jpg" alt="Final image" /></li>
+  <li>Specify the function name.
+<img src="/assets/images/blog/simple-home-automation/7.jpg" alt="Final image" /></li>
+  <li>Repeat the same for the other functions functions like bulboff, tubelight on and tubelight off.</li>
+</ol>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install qbittorrent</span>
-</code></pre></div></div>
-
-<p>If you like to download videos from youtube. Then worry not, here comes youtube-dl. The youtube-dl is a commandline function to download youtube videos.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install youtube-dl</span>
-</code></pre></div></div>
-
-<p>Consider Fedora is your daily driver workstation. You might need to take screenshots or custom screenshots. Shutter snipping tools is the best alternative for Fedora.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install shutter</span>
-</code></pre></div></div>
-
-<p>Lets install unzip for uncompressing files.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install unzip</span>
-</code></pre></div></div>
-
-<p>Lets install java plugins for web browsers.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install icedtea-web java-openjdk</span>
-</code></pre></div></div>
-
-<p>Lets install java JDK.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ yum install -y java-1.8.0-openjdk-devel</span>
-</code></pre></div></div>
-
-<p>If you develop programs in C, you will need development tools.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y group install 'Development Tools'</span>
-</code></pre></div></div>
-
-<p>Everyone has an IDE preference, I like to use Sublime. First we must import the sublime repo.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg</span>
-</code></pre></div></div>
-
-<p>We then add the repo using config manager.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo</span>
-</code></pre></div></div>
-
-<p>Now, we are ready to install Sublime IDE.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install sublime-text</span>
-</code></pre></div></div>
-
-<p>If you are a gamer, you must have steam. For installing steam, we need to add the steam repo into the system.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y config-manager --add-repo=http://negativo17.org/repos/fedora-steam.repo</span>
-</code></pre></div></div>
-
-<p>Now, lets install the update the repo list.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y update</span>
-</code></pre></div></div>
-
-<p>Lets install Steam.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">$ dnf -y install steam</span>
-</code></pre></div></div>
-
-<p>This is it folks. These steps helped me make my Fedora be used as a daily driver.</p>
+<p>It’s done. Now command your google assistant to turn on tubelight and see the wonder.</p>
 
         
       </section>
@@ -520,18 +519,18 @@
     
       
       
-      <a href="/categories/#fedora" class="page__taxonomy-item" rel="tag">Fedora</a><span class="sep">, </span>
+      <a href="/categories/#home-automation" class="page__taxonomy-item" rel="tag">Home Automation</a><span class="sep">, </span>
     
       
       
-      <a href="/categories/#linux" class="page__taxonomy-item" rel="tag">Linux</a>
+      <a href="/categories/#raspberry-pi" class="page__taxonomy-item" rel="tag">Raspberry Pi</a>
     
     </span>
   </p>
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-09-27">September 27, 2018</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-12-17">December 17, 2018</time></p>
         
       </footer>
 
@@ -540,24 +539,24 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?via=blackisashu&text=Things+to+do+after+installing+Fedora+28%20https%3A%2F%2Fwww.sashwat.in%2Flinux%2Ffedora%2Fthings-to-do-after-installing-fedora-28%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?via=blackisashu&text=Simple+Home+Automation+using+Pi+Zero+W%2C+Particle.io%2C+Google+assistant+and+IFTTT%20https%3A%2F%2Fwww.sashwat.in%2Fraspberry%2520pi%2Fhome%2520automation%2Fsimple-home-automation%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.sashwat.in%2Flinux%2Ffedora%2Fthings-to-do-after-installing-fedora-28%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.sashwat.in%2Fraspberry%2520pi%2Fhome%2520automation%2Fsimple-home-automation%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.sashwat.in%2Flinux%2Ffedora%2Fthings-to-do-after-installing-fedora-28%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.sashwat.in%2Fraspberry%2520pi%2Fhome%2520automation%2Fsimple-home-automation%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.sashwat.in%2Flinux%2Ffedora%2Fthings-to-do-after-installing-fedora-28%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.sashwat.in%2Fraspberry%2520pi%2Fhome%2520automation%2Fsimple-home-automation%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">Previous</a>
+      <a href="/web/PHP-installation/" class="pagination--pager" title="PHP and MySQL Installation and Why no need for Web Server
+">Previous</a>
     
     
-      <a href="/linux/networking/wake-on-lan-on-local-server/" class="pagination--pager" title="Setup wake on LAN on local server
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -571,42 +570,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src=
-          
-            "/assets/images/blog/simple-home-automation/simple-home-automation.png"
-          
-          alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/raspberry%20pi/home%20automation/simple-home-automation/" rel="permalink">Simple Home Automation using Pi Zero W, Particle.io, Google assistant and IFTTT
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  2 minute read
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">
-
-</p>
-  </article>
-</div>
         
           
 
@@ -635,7 +598,7 @@
 
 
 
-  4 minute read
+  3 minute read
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">
@@ -671,7 +634,7 @@
 
 
 
-  7 minute read
+  6 minute read
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">
@@ -698,6 +661,42 @@
     <h2 class="archive__item-title" itemprop="headline">
       
         <a href="/linux/rhel/things-to-do-after-installing-rhel-7/" rel="permalink">Things to do after installing RHEL 7
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/blog/my-take-on-devops/devops-cover.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/devops/my-take-on-devops/" rel="permalink">My Take On DevOps
 </a>
       
     </h2>
@@ -795,8 +794,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://www.sashwat.in/linux/fedora/things-to-do-after-installing-fedora-28/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/linux/fedora/things-to-do-after-installing-fedora-28"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "https://www.sashwat.in/raspberry%20pi/home%20automation/simple-home-automation/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/raspberry%20pi/home%20automation/simple-home-automation"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');

@@ -1,4 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.sashwat.in/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.sashwat.in/" rel="alternate" type="text/html" /><updated>2019-01-08T23:49:51+05:30</updated><id>https://www.sashwat.in/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name><email>sashwat0001@gmail.com</email></author><entry><title type="html">PHP and MySQL Installation and Why no need for Web Server</title><link href="https://www.sashwat.in/web/PHP-installation/" rel="alternate" type="text/html" title="PHP and MySQL Installation and Why no need for Web Server" /><published>2018-11-15T00:00:00+05:30</published><updated>2018-11-15T18:35:34+05:30</updated><id>https://www.sashwat.in/web/PHP-installation</id><content type="html" xml:base="https://www.sashwat.in/web/PHP-installation/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/setting-Up-localhost.jpg&quot; alt=&quot;setting-up-localhost&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.sashwat.in/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.sashwat.in/" rel="alternate" type="text/html" /><updated>2019-01-09T18:35:04+05:30</updated><id>https://www.sashwat.in/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name><email>sashwat0001@gmail.com</email></author><entry><title type="html">Simple Home Automation using Pi Zero W, Particle.io, Google assistant and IFTTT</title><link href="https://www.sashwat.in/raspberry%20pi/home%20automation/simple-home-automation/" rel="alternate" type="text/html" title="Simple Home Automation using Pi Zero W, Particle.io, Google assistant and IFTTT" /><published>2018-12-17T00:00:00+05:30</published><updated>2018-12-17T18:35:34+05:30</updated><id>https://www.sashwat.in/raspberry%20pi/home%20automation/simple-home-automation</id><content type="html" xml:base="https://www.sashwat.in/raspberry%20pi/home%20automation/simple-home-automation/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/simple-home-automation/simple-home-automation.png&quot; alt=&quot;simple-home-automation&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;Almost everyone’s dream is to have an automated home. But, automated home is expensive and developing on your own is a major task until now. Today we will make simple home automation device using Raspberry Pi Zero W that can automate a switch using relays.&lt;/p&gt;
+
+&lt;h1 id=&quot;hardware-requirements&quot;&gt;Hardware Requirements&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Raspberry Pi Zero W - 1&lt;/li&gt;
+  &lt;li&gt;2 - Channel relay&lt;/li&gt;
+  &lt;li&gt;Some wires&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;software-requirements&quot;&gt;Software Requirements&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Particle.io account&lt;/li&gt;
+  &lt;li&gt;IFTTT application&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;things-to-know-before-the-build&quot;&gt;Things to know before the build&lt;/h1&gt;
+
+&lt;h2 id=&quot;particleio-pin-diagram&quot;&gt;Particle.io Pin diagram&lt;/h2&gt;
+
+&lt;p&gt;The pin numbering of particle.io on Raspberry Pi is different from the standard one. The below diagram will explain.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/simple-home-automation/particle-io-pin-diagram.png&quot; alt=&quot;Particle.io Pin Diagram&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;instructions&quot;&gt;Instructions&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-initial-step&quot;&gt;1. Initial step&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Log in to github and to &lt;a href=&quot;https://github.com/Sashuu6/my-room-automation-project&quot;&gt;this link&lt;/a&gt; and fork the github repository.&lt;/li&gt;
+  &lt;li&gt;Download the repository to your computer.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2-particleio&quot;&gt;2. Particle.io&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Goto to particle.io webIDE using &lt;a href=&quot;https://build.particle.io/build/new&quot;&gt;this link&lt;/a&gt;.
+&lt;img src=&quot;/assets/images/blog/simple-home-automation/particle-io-1.png&quot; alt=&quot;Particle.io Pin Diagram&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add title and copy the code from the downloaded repository (present in code/main_program/main_program.ino) and paste it on the code editor.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click on the compile ( present at left, above the folder symbol).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3-setup-raspberry-pi-zero-w&quot;&gt;3. Setup Raspberry Pi Zero W&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download &lt;a href=&quot;https://www.balena.io/etcher/&quot;&gt;etcher&lt;/a&gt; and install it on your system.&lt;/li&gt;
+  &lt;li&gt;Download raspberry pi stretch &lt;a href=&quot;https://downloads.raspberrypi.org/raspbian_lite_latest&quot;&gt;image&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Flash the image to an SD card via the etcher.&lt;/li&gt;
+  &lt;li&gt;Remove and insert sdcard into the system.&lt;/li&gt;
+  &lt;li&gt;Create a file ssh inside boot.&lt;/li&gt;
+  &lt;li&gt;Create another file named wpa_supplicant.conf inside boot and add the following code to insert Wi-Fi credentials.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+network={
+ ssid=&quot;YOUR_NETWORK_NAME&quot;
+ psk=&quot;YOUR_PASSWORD&quot;
+ key_mgmt=WPA-PSK
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;Replace YOUR_NETWORK_NAME with your WiFi’s ssid and YOUR_PASSWORD with it’s password.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, insert the sdcard inside the Raspberry Pi Zero W and fire up the Pi.&lt;/li&gt;
+  &lt;li&gt;Find the Raspberry Pi’s IP address. You can do that by using applications like Fling.&lt;/li&gt;
+  &lt;li&gt;now ssh to the Pi using your Linux or Mac system. If you are using Windows ( First of all goto hell because you are using Windows), then download putty to ssh to the Pi.&lt;/li&gt;
+  &lt;li&gt;To SSH into the Pi.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ssh pi@ipaddress
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, update and upgrade the Pi.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt update &amp;amp;&amp;amp; apt upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Install particle.io client into the Pi.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ bash &amp;lt;( curl -sL https://particle.io/install-pi )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;You will be asked to enter your particle.io username and password. Also add the name of the Pi. Now the Pi is setup.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now upload the code to the Pi (Present on the left side of the WebIDE).
+&lt;img src=&quot;/assets/images/blog/simple-home-automation/particle-io-2.png&quot; alt=&quot;Particle.io Pin Diagram&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;4-connecting-relay-with-raspberry-pi-zero-w&quot;&gt;4. Connecting relay with Raspberry Pi Zero W&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Connect D0 of Raspberry Pi (Refer pin diagram from above) to relay 1.&lt;/li&gt;
+  &lt;li&gt;Connect D1 of Raspberry Pi to relay 2.&lt;/li&gt;
+  &lt;li&gt;Connect 5v for relay’s power.&lt;/li&gt;
+  &lt;li&gt;Connect GND of Pi to GND of the 2 relays.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/simple-home-automation/complete-image.jpg&quot; alt=&quot;Final image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-setup-ifttt&quot;&gt;5. Setup IFTTT&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Click ‘+’ from the app.
+&lt;img src=&quot;/assets/images/blog/simple-home-automation/0.jpg&quot; alt=&quot;Final image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Click ‘this’.
+&lt;img src=&quot;/assets/images/blog/simple-home-automation/1.jpg&quot; alt=&quot;Final image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Search google assistant and click on it.
+&lt;img src=&quot;/assets/images/blog/simple-home-automation/2.jpg&quot; alt=&quot;Final image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Click ‘say a simple phrase’.
+&lt;img src=&quot;/assets/images/blog/simple-home-automation/3.jpg&quot; alt=&quot;Final image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Specify the credentials as below.
+&lt;img src=&quot;/assets/images/blog/simple-home-automation/4.jpg&quot; alt=&quot;Final image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Click ‘that’.
+&lt;img src=&quot;/assets/images/blog/simple-home-automation/5.jpg&quot; alt=&quot;Final image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;search and select ‘particle.io’.
+&lt;img src=&quot;/assets/images/blog/simple-home-automation/6.jpg&quot; alt=&quot;Final image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Specify the function name.
+&lt;img src=&quot;/assets/images/blog/simple-home-automation/7.jpg&quot; alt=&quot;Final image&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Repeat the same for the other functions functions like bulboff, tubelight on and tubelight off.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;It’s done. Now command your google assistant to turn on tubelight and see the wonder.&lt;/p&gt;</content><author><name>Sashwat K</name><email>sashwat0001@gmail.com</email></author><summary type="html"></summary></entry><entry><title type="html">PHP and MySQL Installation and Why no need for Web Server</title><link href="https://www.sashwat.in/web/PHP-installation/" rel="alternate" type="text/html" title="PHP and MySQL Installation and Why no need for Web Server" /><published>2018-11-15T00:00:00+05:30</published><updated>2018-11-15T18:35:34+05:30</updated><id>https://www.sashwat.in/web/PHP-installation</id><content type="html" xml:base="https://www.sashwat.in/web/PHP-installation/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/setting-Up-localhost.jpg&quot; alt=&quot;setting-up-localhost&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;why-setup-localhost&quot;&gt;Why setup localhost&lt;/h1&gt;
 
