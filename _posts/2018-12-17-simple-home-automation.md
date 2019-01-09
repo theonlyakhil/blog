@@ -115,3 +115,6 @@ You will be asked to enter your particle.io username and password. Also add the 
 9. Repeat the same for the other functions functions like bulboff, tubelight on and tubelight off.
 
 It's done. Now command your google assistant to turn on tubelight and see the wonder.
+Watch the following video for demo.
+
+[![](http://img.youtube.com/vi/qlP8LjUNwF8/0.jpg)](http://www.youtube.com/watch?v=qlP8LjUNwF8 "Home automation Video")
