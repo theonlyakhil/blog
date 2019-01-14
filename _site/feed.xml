@@ -1,4 +1,92 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.sashwat.in/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.sashwat.in/" rel="alternate" type="text/html" /><updated>2019-01-09T18:47:27+05:30</updated><id>https://www.sashwat.in/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name><email>sashwat0001@gmail.com</email></author><entry><title type="html">Simple Home Automation using Pi Zero W, Particle.io, Google assistant and IFTTT</title><link href="https://www.sashwat.in/raspberry%20pi/home%20automation/simple-home-automation/" rel="alternate" type="text/html" title="Simple Home Automation using Pi Zero W, Particle.io, Google assistant and IFTTT" /><published>2018-12-17T00:00:00+05:30</published><updated>2018-12-17T18:35:34+05:30</updated><id>https://www.sashwat.in/raspberry%20pi/home%20automation/simple-home-automation</id><content type="html" xml:base="https://www.sashwat.in/raspberry%20pi/home%20automation/simple-home-automation/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/simple-home-automation/simple-home-automation.png&quot; alt=&quot;simple-home-automation&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.sashwat.in/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.sashwat.in/" rel="alternate" type="text/html" /><updated>2019-01-14T16:12:43+05:30</updated><id>https://www.sashwat.in/feed.xml</id><title type="html">Sashwat’s Blog</title><subtitle>My tech and other stuff's blog</subtitle><author><name>Sashwat K</name><email>sashwat0001@gmail.com</email></author><entry><title type="html">Kernel-based Virtual Machine (KVM)</title><link href="https://www.sashwat.in/linux/kvm/intsall-kvm-on-linux/" rel="alternate" type="text/html" title="Kernel-based Virtual Machine (KVM)" /><published>2019-01-08T00:00:00+05:30</published><updated>2018-01-08T18:35:34+05:30</updated><id>https://www.sashwat.in/linux/kvm/intsall-kvm-on-linux</id><content type="html" xml:base="https://www.sashwat.in/linux/kvm/intsall-kvm-on-linux/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/kernel-based-virtual-machine/kernel-based-virtual-machine.png&quot; alt=&quot;simple-home-automation&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;I first installed Windows, when I was in 7th standard. It was Windows XP. That time, I really loved to use different operating systems. But, during those days I didn’t know how to use multiple operating systems as virtual machines until I reached by the 11th standard. That time, I was using Windows 7 ultimate and I wanted to use Windows Vista for knowing the experience and Windows XP for feeling the nostalgia. I started surfing the internet for solutions. One of the solutions was to use VirtualBox. I installed VirtualBox and installed both the operating systems and started using both of them. It was going well at first. But after a few days, I started noticing lags and graphics issues. I went along till my BCA first year. When I got my first Laptop (Lenovo Y50-70), I started searching for alternatives for VirtualBox and came across VMWare. VMWare fixed many of the issues, but it was a trail pack and had to pay money to use it. So, I switched back to VirtualBox. It went on till my MCA. During my first year of MCA, I uninstalled Windows 10 completely and installed Fedora. I installed VirtualBox for Virtualization. I was then suggested by my senior, &lt;a href=&quot;https://karuvally.github.io/&quot;&gt;Ashwin Babu Karuvally&lt;/a&gt; that KVM is better than VirtualBox. I started surfing the internet for KVM and I solved many issues that I faced while using VirtualBox.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-is-kvm&quot;&gt;What is KVM?&lt;/h1&gt;
+
+&lt;p&gt;Kernel-based Virtual Machine is an open source virtualization technology built into Linux. KVM is an alternative for using VirtualBox or VMWare. KVM helps to convert the Linux host system (Your machine) into a hypervisor that can run multiple operating systems as individual and independent virtual environments. These virtual environments are called guest machines or virtual machines. To understand how KVM works, we need to know what KVM is and how it works?&lt;/p&gt;
+
+&lt;h1 id=&quot;what-is-hypervisor&quot;&gt;What is Hypervisor?&lt;/h1&gt;
+
+&lt;p&gt;The hypervisor can be a software or hardware that can run virtual machines. The hypervisor provides a virtual operating environment for running the operating systems. Using hypervisor, a user can run any operating system on the host system. There are mainly 2 types of hypervisors:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Type-1: Bare-metal hypervisors&lt;/li&gt;
+  &lt;li&gt;Type-2: Hosted hypervisors&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/kernel-based-virtual-machine/type-hypervisor.png&quot; alt=&quot;Types-of-hypervisor&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A type-1: Bare-metal hypervisor is a type of hypervisor communicates directly with the host’s hardware. That is, the guest machine’s hardware directly communicates with the host’s machine. This type of hypervisors are fast and have least delay time. When the user triggers a command in guest operating system, it sends the command to the hypervisor and the hypervisor sends the command to the host’s hardware. Kernel-based Virtual Machine (KVM), Red Hat Enterprise Virtualization (RHEV), XenServer, Microsoft Windows Server 2012 Hyper-V and VMware vSphere are examples of this type of hypervisors.&lt;/p&gt;
+
+&lt;p&gt;A type-2: Hosted hypervisor is a type of hypervisor communicates using the host operating system. A hosted hypervisor creates each running instance of the guest machine as a process in the host operating system. So for every request from the guest operating system goes to the host operating system and from there to the hardware. This communication takes time to execute each request. These kinds of hypervisors are not efficient in terms of performance. This type of hypervisor is also called hosted hypervisors. Oracle VirtualBox, VMWare Workstation and Windows Virtual PC are examples of this type of hypervisor.&lt;/p&gt;
+
+&lt;h1 id=&quot;why-kvm&quot;&gt;Why KVM&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Free and open source software.&lt;/li&gt;
+  &lt;li&gt;Secure as it uses sVirt (Secure virtualization) and SELinux for securing and isolating every guest operating system.&lt;/li&gt;
+  &lt;li&gt;Wide hardware support&lt;/li&gt;
+  &lt;li&gt;Efficient memory management&lt;/li&gt;
+  &lt;li&gt;Scalable&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;requirements-before-installing-kvm&quot;&gt;Requirements before installing KVM&lt;/h1&gt;
+
+&lt;p&gt;Make sure to enable Intel Virtualization Technology (INTEL VT) or AMD-V Technology for Client Virtualization. This setting can be enabled through the system’s BIOS settings.&lt;/p&gt;
+
+&lt;h1 id=&quot;installing-kvm&quot;&gt;Installing KVM&lt;/h1&gt;
+&lt;h2 id=&quot;ubuntu-1804&quot;&gt;Ubuntu 18.04&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Lets install KVM and virtual machine manager.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Next we need to find the name of the network interfaces. It will be like enp8s0 or something like that.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ip a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, we have to edit the network interface’s configuration file to create a network bridge. This bridge will provide internet to all the virtual machines (VM). The file will be empty.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo nano /etc/network/interfaces
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add the following line.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;auto lo br0
+iface lo inet loopback
+iface enp8s0 inet manual
+iface br0 inet dhcp
+  bridge_ports enp8s0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now we will add the user to appropriate group, so that he can open any KVM without need for root access.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo adduser username libvirt
+$ sudo adduser username libvirt-qemu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Reboot your system.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;fedora-29&quot;&gt;Fedora 29&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Install KVM
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo dnf install @virtualization
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Let’s start the service.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo systemctl start libvirtd
+$ sudo systemctl enable libvirtd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here, no need to setup network bridge because during installation, the installer will automatically do that.&lt;/p&gt;
+
+&lt;h1 id=&quot;other-methods-to-use-kvm&quot;&gt;Other Methods to use KVM&lt;/h1&gt;
+&lt;p&gt;If you want to use KVM on your home server. That is, if you have a server that is used for virtualization only. You can use Proxmox server. Proxmox was first suggested by my senior, &lt;a href=&quot;https://www.tharunpkarun.com/&quot;&gt;Tharun P Karun&lt;/a&gt;. I used proxmox server for my virtualization server. Learn more about proxmox server from &lt;a href=&quot;https://www.proxmox.com/en/&quot;&gt;this link&lt;/a&gt;.&lt;/p&gt;</content><author><name>Sashwat K</name><email>sashwat0001@gmail.com</email></author><summary type="html"></summary></entry><entry><title type="html">Simple Home Automation using Pi Zero W, Particle.io, Google assistant and IFTTT</title><link href="https://www.sashwat.in/raspberry%20pi/home%20automation/simple-home-automation/" rel="alternate" type="text/html" title="Simple Home Automation using Pi Zero W, Particle.io, Google assistant and IFTTT" /><published>2018-12-17T00:00:00+05:30</published><updated>2018-12-17T18:35:34+05:30</updated><id>https://www.sashwat.in/raspberry%20pi/home%20automation/simple-home-automation</id><content type="html" xml:base="https://www.sashwat.in/raspberry%20pi/home%20automation/simple-home-automation/">&lt;p&gt;&lt;img src=&quot;/assets/images/blog/simple-home-automation/simple-home-automation.png&quot; alt=&quot;simple-home-automation&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
 
