@@ -67,7 +67,7 @@ network={
 ```
 Replace YOUR_NETWORK_NAME with your WiFi's ssid and YOUR_PASSWORD with it's password.
 7. Now, insert the sdcard inside the Raspberry Pi Zero W and fire up the Pi.
-8. Find the Raspberry Pi's IP address. You can do that by using applications like Fling.
+8. Find the Raspberry Pi's IP address. You can do that by using applications like Fing.
 9. now ssh to the Pi using your Linux or Mac system. If you are using Windows ( First of all goto hell because you are using Windows), then download putty to ssh to the Pi.
 10. To SSH into the Pi.
 ```
